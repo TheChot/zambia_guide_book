@@ -1,11 +1,11 @@
 import React, {Component} from 'react'
 
-class FavouritePictures extends Component{
+class HomePage extends Component{
 
     render(){
         return(
             <div>
-                <h1>Favourite Pictures</h1>
+                <h1>Map</h1>
                 
             </div>
         )
@@ -13,4 +13,4 @@ class FavouritePictures extends Component{
 
 }
 
-export default FavouritePictures;
+export default HomePage;
