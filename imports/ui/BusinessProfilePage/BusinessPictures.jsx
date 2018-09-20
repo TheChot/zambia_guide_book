@@ -1,11 +1,11 @@
 import React, {Component} from 'react'
 
-class MainBusinessPage extends Component{
+class BusinessPictures extends Component{
 
     render(){
         return(
             <div>
-                <h1>Business Page</h1>
+                <h1>Map</h1>
                 
             </div>
         )
@@ -13,4 +13,4 @@ class MainBusinessPage extends Component{
 
 }
 
-export default MainBusinessPage;
+export default BusinessPictures;
