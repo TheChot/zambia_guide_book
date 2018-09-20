@@ -1,11 +1,11 @@
 import React, {Component} from 'react'
 
-class HotRightNow extends Component{
+class CityPictures extends Component{
 
     render(){
         return(
             <div>
-                <h1>Hot Right Now</h1>
+                <h1>Map</h1>
                 
             </div>
         )
@@ -13,4 +13,4 @@ class HotRightNow extends Component{
 
 }
 
-export default HotRightNow;
+export default CityPictures;
