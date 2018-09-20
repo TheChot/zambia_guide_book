@@ -5,7 +5,7 @@ class AboutBusiness extends Component{
     render(){
         return(
             <div>
-                <h1>Map</h1>
+                <h1>About Business</h1>
                 
             </div>
         )

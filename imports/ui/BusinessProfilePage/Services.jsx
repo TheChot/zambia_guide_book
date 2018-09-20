@@ -5,7 +5,7 @@ class Services extends Component{
     render(){
         return(
             <div>
-                <h1>Map</h1>
+                <h1>Services</h1>
                 
             </div>
         )

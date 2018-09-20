@@ -5,7 +5,7 @@ class BusinessPictures extends Component{
     render(){
         return(
             <div>
-                <h1>Map</h1>
+                <h1>Pictures for the Business</h1>
                 
             </div>
         )
