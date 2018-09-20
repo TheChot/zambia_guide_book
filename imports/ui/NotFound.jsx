@@ -1,11 +1,11 @@
 import React, {Component} from 'react'
 
-class SightPage extends Component{
+class NotFound extends Component{
 
     render(){
         return(
             <div>
-                <h1>Sight Page</h1>
+                <h1>This is not the page you are looking for</h1>
                 
             </div>
         )
@@ -13,4 +13,4 @@ class SightPage extends Component{
 
 }
 
-export default SightPage;
+export default NotFound;
