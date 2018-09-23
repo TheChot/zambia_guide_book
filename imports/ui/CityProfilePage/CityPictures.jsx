@@ -5,7 +5,7 @@ class CityPictures extends Component{
     render(){
         return(
             <div>
-                <h1>Map</h1>
+                <h1>City Pictures</h1>
                 
             </div>
         )
