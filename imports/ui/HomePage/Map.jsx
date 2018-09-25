@@ -7,10 +7,41 @@ class Map extends Component{
         return(
             <div>
                 <h1>Map</h1>
-                <img src="mapofZambia.jpg" alt="" className="theMap" useMap="ZambiaMap"/>
-                <map name="ZambiaMap">
-                    <area shape="poly" coords="262,306, 352,282, 372,328, 270,351" href="/MainBusinessPage" alt=""/>
-                </map>
+                <div>
+                    <img src="mapofZambia.jpg" alt="" className="theMap" useMap="ZambiaMap"/>
+                    <div className="Lusaka">
+                        <img src="star.png" alt=""/>
+                    </div>
+                    <div className="Central">
+                        <img src="city.png" alt=""/>
+                    </div>
+                    <div className="Copperbelt">
+                        <img src="city.png" alt=""/>
+                    </div>
+                    <div className="Southern">
+                        <img src="city.png" alt=""/>
+                    </div>
+                    <div className="Western">
+                        <img src="city.png" alt=""/>
+                    </div>
+                    <div className="NorthWestern">
+                        <img src="city.png" alt=""/>
+                    </div>
+                    <div className="Eastern">
+                       <img src="city.png" alt=""/>
+                    </div>
+                    <div className="Southern">
+                       <img src="city.png" alt=""/>
+                    </div>
+                    <div className="Northern">
+                        <img src="city.png" alt=""/>    
+                    </div>
+                    <div className="Luapula">
+                        <img src="city.png" alt=""/>
+                    </div>
+                </div>
+               
+                
             </div>
         )
     }
