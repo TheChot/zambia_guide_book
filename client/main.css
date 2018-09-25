@@ -11,7 +11,15 @@ body {
 .cityIcon{
   width: 40px;
   height: 40px;
+  animation-name: CityIcons;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
 
+}
+
+@keyframes CityIcons{
+  from{width:40px; height:40px}
+  to{width:45px; height:45px}
 }
 
 .Lusaka{
