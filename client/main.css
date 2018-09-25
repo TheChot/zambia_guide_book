@@ -18,8 +18,9 @@ body {
 }
 
 @keyframes CityIcons{
-  from{width:40px; height:40px}
-  to{width:45px; height:45px}
+  0%{width:40px; height:40px}
+  50%{width:45px; height:45px}
+  100%{width:40px; height:40px}
 }
 
 .Lusaka{
