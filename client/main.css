@@ -7,3 +7,56 @@ body {
   height: 80%;
 
 }
+
+.cityIcon{
+  width: 40px;
+  height: 40px;
+
+}
+
+.Lusaka{
+  position: absolute;
+  top: 208%;
+  left: 50%;
+}
+
+.Southern{
+  position: absolute;
+  top: 267%;
+  left: 31%;
+}
+.Western{
+  position: absolute;
+  top: 207%;
+  left: 11%;
+}
+.Central{
+  position: absolute;
+  top: 175%;
+  left: 54%;
+}
+.Copperbelt{
+  position: absolute;
+  top: 151%;
+  left: 53%;
+}
+.NorthWestern{
+  position: absolute;
+  top: 132%;
+  left: 36%;
+}
+.Northern{
+  position: absolute;
+  top: 85%;
+  left: 73%;
+}
+.Eastern{
+  position: absolute;
+  top: 168%;
+  left: 84%;
+}
+.Luapula{
+  position: absolute;
+  top: 108%;
+  left: 55%;
+}

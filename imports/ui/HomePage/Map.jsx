@@ -10,34 +10,34 @@ class Map extends Component{
                 <div>
                     <img src="mapofZambia.jpg" alt="" className="theMap" useMap="ZambiaMap"/>
                     <div className="Lusaka">
-                        <img src="star.png" alt=""/>
+                        <a href="/MainCityPage"><img src="star.png" alt="" className="cityIcon"/></a>                        
                     </div>
                     <div className="Central">
-                        <img src="city.png" alt=""/>
+                        <a href="/MainCityPage"><img src="city.png" alt="" className="cityIcon"/></a>                        
                     </div>
                     <div className="Copperbelt">
-                        <img src="city.png" alt=""/>
+                        <a href="/MainCityPage"><img src="city.png" alt="" className="cityIcon"/></a>
                     </div>
                     <div className="Southern">
-                        <img src="city.png" alt=""/>
+                        <a href="/MainCityPage"><img src="city.png" alt="" className="cityIcon"/></a>
                     </div>
                     <div className="Western">
-                        <img src="city.png" alt=""/>
+                        <a href="/MainCityPage"><img src="city.png" alt="" className="cityIcon"/></a>
                     </div>
                     <div className="NorthWestern">
-                        <img src="city.png" alt=""/>
+                        <a href="/MainCityPage"><img src="city.png" alt="" className="cityIcon"/></a>
                     </div>
                     <div className="Eastern">
-                       <img src="city.png" alt=""/>
+                        <a href="/MainCityPage"><img src="city.png" alt="" className="cityIcon"/></a>
                     </div>
                     <div className="Southern">
-                       <img src="city.png" alt=""/>
+                       <a href="/MainCityPage"><img src="city.png" alt="" className="cityIcon"/></a>
                     </div>
                     <div className="Northern">
-                        <img src="city.png" alt=""/>    
+                        <a href="/MainCityPage"><img src="city.png" alt="" className="cityIcon"/></a>
                     </div>
                     <div className="Luapula">
-                        <img src="city.png" alt=""/>
+                        <a href="/MainCityPage"><img src="city.png" alt="" className="cityIcon"/></a>
                     </div>
                 </div>
                
