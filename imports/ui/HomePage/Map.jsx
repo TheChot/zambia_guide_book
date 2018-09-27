@@ -3,10 +3,10 @@ import React, {Component} from 'react';
 
 class Map extends Component{
 
-    setCity = (e,city) =>{
+    setCity = (e, city) =>{
         
         Session.set("City",city);
-        
+        FlowRouter.go('/MainCityPage')
 
     }
 
@@ -17,52 +17,52 @@ class Map extends Component{
                 <div className="container">
                     <div className="row">
                         <div className="col-sm">
-                            <button onClick={e => this.setCity(e,Lusaka)}>
+                            <button onClick={e => this.setCity(e,'Lusaka')}>
                                 Lusaka
                             </button>
                         </div>
                         <div className="col-sm">
-                            <button onClick={e => this.setCity(e,Kabwe)}>
+                            <button onClick={e => this.setCity(e,'Kabwe')}>
                                 Central
                             </button>
                         </div>
                         <div className="col-sm">
-                            <button onClick={e => this.setCity(e,Ndola)}>
+                            <button onClick={e => this.setCity(e,'Ndola')}>
                                 Copperbelt
                             </button>
                         </div>
                         <div className="col-sm">
-                            <button onClick={e => this.setCity(e,Livingstone)}>
+                            <button onClick={e => this.setCity(e, 'Livingstone')}>
                                 Southern
                             </button>
                         </div>
                         <div className="col-sm">
-                            <button onClick={e => this.setCity(e,Chipata)}>
+                            <button onClick={e => this.setCity(e,'Chipata')}>
                                 Eastern
                             </button>
                         </div>
                         <div className="col-sm">
-                            <button onClick={e => this.setCity(e,Solwezi)}>
+                            <button onClick={e => this.setCity(e, 'Solwezi')}>
                                 North-Western
                             </button>
                         </div>
                         <div className="col-sm">
-                            <button onClick={e => this.setCity(e,Kasama)}>
+                            <button onClick={e => this.setCity(e,'Kasama')}>
                                 Northern
                             </button>
                         </div>
                         <div className="col-sm">
-                            <button onClick={e => this.setCity(e,Mansa)}>
+                            <button onClick={e => this.setCity(e,'Mansa')}>
                                 Luapula
                             </button>
                         </div>
                         <div className="col-sm">
-                            <button onClick={e => this.setCity(e,Mongu)}>
+                            <button onClick={e => this.setCity(e,'Mongu')}>
                                 Western
                             </button>
                         </div>
                         <div className="col-sm">
-                            <button onClick={e => this.setCity(e,Chinsali)}>
+                            <button onClick={e => this.setCity(e, 'Chinsali')}>
                                 Muchinga
                             </button>
                         </div>
