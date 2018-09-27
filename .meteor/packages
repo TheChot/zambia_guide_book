@@ -22,3 +22,8 @@ static-html
 kadira:flow-router
 accounts-base
 accounts-password
+meteortoys:allthings
+react-meteor-data
+session
+check
+aldeed:simple-schema
