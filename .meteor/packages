@@ -27,3 +27,4 @@ react-meteor-data
 session
 check
 aldeed:simple-schema
+selaias:meteor-simpleweather

@@ -52,6 +52,21 @@ class MainCityPage extends Component{
     }
     setPlace = () =>{
         const city = Session.get("City")
+        // var options = {
+        //     location: 50.850340+','+ 4.351710, // Brussels
+        //     unit: 'c',
+        //     success: function (weather) {
+        //         console.log(weather.code,weather.units.temp);
+              
+              
+        //       $("#weather").html(html);
+        //     },
+        //     error: function(error) {
+        //       $("#weather").html('<p>'+error+'</p>');
+        //     }
+        //   }
+          
+        //   Weather.options = options
 
         switch(city){
 
