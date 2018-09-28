@@ -1,4 +1,6 @@
-import React, {Component} from 'react'
+import React, {Component} from 'react';
+import {BusinessDb} from '../../api/collections/collections.js';
+import { withTracker } from 'meteor/react-meteor-data';
 
 class UploadFile extends Component{
 
@@ -6,6 +8,7 @@ class UploadFile extends Component{
         return(
             <div>
                 <h1>Upload</h1>
+                <form action=""></form>
                 
             </div>
         )
@@ -13,4 +16,10 @@ class UploadFile extends Component{
 
 }
 
-export default UploadFile;
+export default withTracker(()=>{
+    Meteor.subscribe('businessdb');
+    
+    return{
+        businessdb : BusinessDb.find({}).fetch(),
+    }
+})(UploadFile);
