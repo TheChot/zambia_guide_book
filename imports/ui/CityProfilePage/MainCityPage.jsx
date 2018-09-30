@@ -11,7 +11,9 @@ class MainCityPage extends Component{
         this.state = {
             CityPicturesComp:true,
             HotRightNowComp: false,
-            PlacesComp:false
+            PlacesComp:false,
+            weatherDescription:'',
+            weatherTemp:''
         }
     }
     
@@ -42,23 +44,31 @@ class MainCityPage extends Component{
         
         let theWeather = require('jquery');
         const city = Session.get("City")
+        
+        var cityTemp;
+        var cityDescription;
+
         console.log("jquery loaded");
         theWeather.getJSON("http://api.openweathermap.org/data/2.5/weather?q="+city+",ZM&appid=afe95526ff604e223ab6b2ef98541b66",function(json){
             console.log(JSON.stringify(json));
             var weatherObject = JSON.stringify(json);
             var weatherjson = JSON.parse(weatherObject);
-            console.log(weatherjson.weather[0].description);
-            console.log(weatherjson.main.temp);
-            var cityDescription = weatherjson.weather[0].description;
-            var cityTemp = weatherjson.main.temp;
-                        
-            return(
-                <div>
-                    <h3>{cityDescription}</h3>
-                    <h3>{cityTemp}</h3>
-                </div>
-            )
+            // console.log(weatherjson.weather[0].description);
+            // console.log(weatherjson.main.temp);
+            
+            cityDescription = weatherjson.weather[0].description;
+            cityTemp = weatherjson.main.temp;
+           
+            
         });
+        
+        this.setState({
+            weatherDescription:cityDescription,
+            weatherTemp: cityTemp
+        });
+        console.log(this.state.weatherDescription);
+        console.log(this.state.weatherTemp);
+        
     }
 
     setComponent = () =>{
@@ -73,7 +83,8 @@ class MainCityPage extends Component{
 
     }
     setPlace = () =>{
-        const city = Session.get("City")
+        const city = Session.get("City");
+        
         // var options = {
         //     location: 50.850340+','+ 4.351710, // Brussels
         //     unit: 'c',
@@ -95,9 +106,11 @@ class MainCityPage extends Component{
             case "Lusaka":
                 return(
                     <div>
-                        <h1>Lusaka</h1>
-                        <h1>Lusaka</h1>
                         
+                        <h1>Lusaka</h1>
+                        <h1>Lusaka</h1>
+                       
+
                     </div>
                 );
                 break;
@@ -169,7 +182,8 @@ class MainCityPage extends Component{
                     <div>
                         <h1>Northern</h1>
                         <h1>Kasama</h1>
-          
+                        <h2>{this.state.weatherDescription}</h2>
+                        <h2>{this.state.weatherTemp}</h2>   
                     </div>
                 );
                 break;
@@ -178,7 +192,8 @@ class MainCityPage extends Component{
                     <div>
                         <h1>Muchinga</h1>
                         <h1>Chinsali</h1>
-
+                        <h2>{this.state.weatherDescription}</h2>
+                        <h2>{this.state.weatherTemp}</h2>   
                     </div>
                 );
                 break;
@@ -186,13 +201,21 @@ class MainCityPage extends Component{
 
         }
     }
+    componentDidMount(){
+        this.getWeather();
+        
+      
+        
+    }
 
     render(){
         return(
             <div>
                 <h1>Main City Page</h1>
                 {this.setPlace()}
-                {this.getWeather()}
+                <h2>{this.state.weatherDescription}</h2>
+                <h2>{this.state.weatherTemp}</h2>
+                             
                 <button onClick ={this.setPictures}>Pictures</button>
                 <button onClick ={this.setHotRightNow}>Hot Right Now</button>
                 <button onClick ={this.setPlaces}>Places</button>

@@ -28,3 +28,4 @@ session
 check
 aldeed:simple-schema
 selaias:meteor-simpleweather
+ostrio:files
