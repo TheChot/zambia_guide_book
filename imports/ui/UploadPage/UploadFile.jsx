@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import {BusinessDb} from '../../api/collections/collections.js';
+import {BusinessDb, BusinessImagesDB} from '../../api/collections/collections.js';
 import { withTracker } from 'meteor/react-meteor-data';
+import PropTypes from 'prop-types';
 
 class UploadFile extends Component{
 
@@ -29,6 +30,27 @@ class UploadFile extends Component{
     handleSubmit= (e) =>{
 
         e.preventDefault();
+
+        const {target} = e;
+        
+        if(target.Image.files && target.Image.files[0]){
+            
+            const imageUploader = target.Image.files[0];
+            if (imageUploader){
+                let uploadInstance = BusinessImagesDB.insert({
+                    file: imageUploader,
+                    meta: {
+                      //locator: self.props.fileLocator,
+                      userId: Meteor.userId() // Optional, used to check on server for file tampering
+                    },
+                    streams: 'dynamic',
+                    chunkSize: 'dynamic',
+                    allowWebWorkers: true // If you see issues with uploads, change this to false
+                  }, false)
+
+                  uploadInstance.start();
+            }
+        }
         const Business = this.state.BusinessName;
         const PhoneOne = this.state.PhoneNumberOne;
         const PhoneTwo = this.state.PhoneNumberTwo;
@@ -79,8 +101,10 @@ class UploadFile extends Component{
 
 export default withTracker(()=>{
     Meteor.subscribe('businessdb');
+    Meteor.subscribe('businessimagesdb');
     
     return{
         businessdb : BusinessDb.find({}).fetch(),
+        businessimagesdb : BusinessImagesDB.find({}).fetch(),
     }
 })(UploadFile);
