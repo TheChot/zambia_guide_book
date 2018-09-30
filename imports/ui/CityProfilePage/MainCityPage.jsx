@@ -48,7 +48,7 @@ class MainCityPage extends Component{
         var cityTemp;
         var cityDescription;
 
-        console.log("jquery loaded");
+        console.log("jquery loading");
         theWeather.getJSON("http://api.openweathermap.org/data/2.5/weather?q="+city+",ZM&appid=afe95526ff604e223ab6b2ef98541b66",function(json){
             console.log(JSON.stringify(json));
             var weatherObject = JSON.stringify(json);
@@ -66,8 +66,8 @@ class MainCityPage extends Component{
             weatherDescription:cityDescription,
             weatherTemp: cityTemp
         });
-        console.log(this.state.weatherDescription);
-        console.log(this.state.weatherTemp);
+        console.log(cityDescription);
+        console.log(cityTemp);
         
     }
 

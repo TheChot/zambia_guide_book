@@ -4,23 +4,70 @@ import { withTracker } from 'meteor/react-meteor-data';
 
 class UploadFile extends Component{
 
+    constructor(){
+        super();
+        this.state = {
+            Image:'',
+            BusinessName:'',
+            PhoneNumberOne:'',
+            PhoneNumberTwo:'',
+            Email:'',
+            Location:'',
+            Service:'',
+            Province:''
+        }  
+    }
+
+    handleInput = (e) =>{
+        const name = e.target.name;
+
+        this.setState({
+            [name]:e.target.value
+        })
+    }
+
+    handleSubmit= (e) =>{
+
+        e.preventDefault();
+        const Business = this.state.BusinessName;
+        const PhoneOne = this.state.PhoneNumberOne;
+        const PhoneTwo = this.state.PhoneNumberTwo;
+        const EmailID = this.state.Email;
+        const LocationID = this.state.Location;
+        const Services = this.state.Service;
+        const Provinces = this.state.Province;
+
+        const NewBusiness = {
+            Business, PhoneOne, PhoneTwo, EmailID,
+            LocationID, Services, Provinces
+        }
+
+        Meteor.call('newBusiness', NewBusiness);
+
+    }
+
     render(){
         return(
             <div>
                 <h1>Upload</h1>
-                <form action="">
+                <form action="" onSubmit = {this.handleSubmit}>
+                    <label htmlFor="">Upload an image</label>
+                    <input type="file" name="Image" onChange={this.handleInput}/><br/><br/>
                     <label htmlFor="">Business Name</label>
-                    <input name="BusinessName" type="text"/>
+                    <input name="BusinessName" type="text" onChange={this.handleInput}/><br/><br/>
                     <label htmlFor="">Phone Number 1</label>
-                    <input name="PhoneNumber1" type="text"/>
+                    <input name="PhoneNumberOne" type="text" onChange={this.handleInput}/><br/><br/>
                     <label htmlFor="">Phone Number 2</label>
-                    <input name="PhoneNumber2" type="text"/>
+                    <input name="PhoneNumberTwo" type="text" onChange={this.handleInput}/><br/><br/>
                     <label htmlFor="">Email</label>
-                    <input name="Email" type="text"/>
+                    <input name="Email" type="text" onChange={this.handleInput}/><br/><br/>
+                    <label htmlFor="">Province</label>
+                    <input name="Province" type="text" onChange={this.handleInput}/><br/><br/>
                     <label htmlFor="">Location</label>
-                    <input name="Location" type="text"/>
+                    <input name="Location" type="text" onChange={this.handleInput}/><br/><br/>
                     <label htmlFor="">Service</label>
-                    <input name="Service" type="text"/>
+                    <input name="Service" type="text" onChange={this.handleInput}/><br/><br/>
+                   
                     <button type="submit">Enter Data</button>
                 </form>
                 
