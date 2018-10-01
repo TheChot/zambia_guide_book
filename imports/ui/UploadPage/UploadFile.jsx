@@ -84,7 +84,19 @@ class UploadFile extends Component{
                     <label htmlFor="">Email</label>
                     <input name="Email" type="text" onChange={this.handleInput}/><br/><br/>
                     <label htmlFor="">Province</label>
-                    <input name="Province" type="text" onChange={this.handleInput}/><br/><br/>
+                    <select name="Province" id="" onChange={this.handleInput}>
+                        <option value="LUSAKA">Lusaka</option>
+                        <option value="CENTRAL">Central</option>
+                        <option value="COPPERBELT">Copperbelt</option>
+                        <option value="EASTERN">Eastern</option>
+                        <option value="NORTHERN">Northern</option>
+                        <option value="SOUTHERN">Southern</option>
+                        <option value="MUCHINGA">Muchinga</option>
+                        <option value="NORTHWESTERN">North Western</option>
+                        <option value="LUAPULA">Luapula</option>
+                        <option value="WESTERN">Western</option>
+                    </select>
+                    <br/><br/>
                     <label htmlFor="">Location</label>
                     <input name="Location" type="text" onChange={this.handleInput}/><br/><br/>
                     <label htmlFor="">Service</label>
