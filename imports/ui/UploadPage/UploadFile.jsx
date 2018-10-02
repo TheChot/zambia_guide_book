@@ -15,7 +15,9 @@ class UploadFile extends Component{
             Email:'',
             Location:'',
             Service:'',
-            Province:''
+            Province:'',
+            imagePreviewURL:'',
+            imagefile:''
         }  
     }
 
@@ -32,10 +34,35 @@ class UploadFile extends Component{
         e.preventDefault();
 
         const {target} = e;
+
+       
+
+
         
         if(target.Image.files && target.Image.files[0]){
             
             const imageUploader = target.Image.files[0];
+
+            let reader = new FileReader();
+            
+            reader.onloadend = () => {
+
+                this.setState({
+                    imagefile:imageUploader,
+                    imagePreviewURL: reader.result
+    
+                })
+                
+            }
+
+            reader.readAsDataURL(imageUploader);
+
+            console.log(imageUploader);
+
+            
+
+
+
             if (imageUploader){
                 let uploadInstance = BusinessImagesDB.insert({
                     file: imageUploader,
@@ -69,44 +96,67 @@ class UploadFile extends Component{
     }
 
     render(){
-        return(
-            <div>
-                <h1>Upload</h1>
-                <form action="" onSubmit = {this.handleSubmit}>
-                    <label htmlFor="">Upload an image</label>
-                    <input type="file" name="Image" onChange={this.handleInput}/><br/><br/>
-                    <label htmlFor="">Business Name</label>
-                    <input name="BusinessName" type="text" onChange={this.handleInput}/><br/><br/>
-                    <label htmlFor="">Phone Number 1</label>
-                    <input name="PhoneNumberOne" type="text" onChange={this.handleInput}/><br/><br/>
-                    <label htmlFor="">Phone Number 2</label>
-                    <input name="PhoneNumberTwo" type="text" onChange={this.handleInput}/><br/><br/>
-                    <label htmlFor="">Email</label>
-                    <input name="Email" type="text" onChange={this.handleInput}/><br/><br/>
-                    <label htmlFor="">Province</label>
-                    <select name="Province" id="" onChange={this.handleInput}>
-                        <option value="LUSAKA">Lusaka</option>
-                        <option value="CENTRAL">Central</option>
-                        <option value="COPPERBELT">Copperbelt</option>
-                        <option value="EASTERN">Eastern</option>
-                        <option value="NORTHERN">Northern</option>
-                        <option value="SOUTHERN">Southern</option>
-                        <option value="MUCHINGA">Muchinga</option>
-                        <option value="NORTHWESTERN">North Western</option>
-                        <option value="LUAPULA">Luapula</option>
-                        <option value="WESTERN">Western</option>
-                    </select>
-                    <br/><br/>
-                    <label htmlFor="">Location</label>
-                    <input name="Location" type="text" onChange={this.handleInput}/><br/><br/>
-                    <label htmlFor="">Service</label>
-                    <input name="Service" type="text" onChange={this.handleInput}/><br/><br/>
-                   
-                    <button type="submit">Enter Data</button>
-                </form>
+
+        if(this.props.imageFiles && this.props.docsReadyYet){
+            
+            let {imagePreviewUrl} = this.state;
+            let $imagePreview = null;
+
+
+
+            if(imagePreviewUrl){
                 
-            </div>
-        )
+                $imagePreview = (<img src={imagePreviewUrl}/>)
+            } else {
+                $imagePreview = (<h1>Waiting On an Image</h1>)
+            }
+
+
+            return(
+                <div>
+                    <h1>Upload</h1>
+                    <form action="" onSubmit = {this.handleSubmit}>
+                        <label htmlFor="">Upload an image</label>
+                        <input type="file" name="Image" onChange={this.handleInput}/><br/><br/>
+                        <label htmlFor="">Business Name</label>
+                        <input name="BusinessName" type="text" onChange={this.handleInput}/><br/><br/>
+                        <label htmlFor="">Phone Number 1</label>
+                        <input name="PhoneNumberOne" type="text" onChange={this.handleInput}/><br/><br/>
+                        <label htmlFor="">Phone Number 2</label>
+                        <input name="PhoneNumberTwo" type="text" onChange={this.handleInput}/><br/><br/>
+                        <label htmlFor="">Email</label>
+                        <input name="Email" type="text" onChange={this.handleInput}/><br/><br/>
+                        <label htmlFor="">Province</label>
+                        <select name="Province" id="" onChange={this.handleInput}>
+                            <option value="LUSAKA">Lusaka</option>
+                            <option value="CENTRAL">Central</option>
+                            <option value="COPPERBELT">Copperbelt</option>
+                            <option value="EASTERN">Eastern</option>
+                            <option value="NORTHERN">Northern</option>
+                            <option value="SOUTHERN">Southern</option>
+                            <option value="MUCHINGA">Muchinga</option>
+                            <option value="NORTHWESTERN">North Western</option>
+                            <option value="LUAPULA">Luapula</option>
+                            <option value="WESTERN">Western</option>
+                        </select>
+                        <br/><br/>
+                        <label htmlFor="">Location</label>
+                        <input name="Location" type="text" onChange={this.handleInput}/><br/><br/>
+                        <label htmlFor="">Service</label>
+                        <input name="Service" type="text" onChange={this.handleInput}/><br/><br/>
+                        
+                        <button type="submit">Enter Data</button>
+                    </form>
+                    {$imagePreview}
+                    
+                </div>
+            )
+        }
+        else{
+            return(
+                <h1>Loading</h1>
+            )
+        }
     }
 
 }
@@ -114,9 +164,13 @@ class UploadFile extends Component{
 export default withTracker(()=>{
     Meteor.subscribe('businessdb');
     Meteor.subscribe('businessimagesdb');
+    const filesHandle = Meteor.subscribe('files.all');
+    const docsReadyYet = filesHandle.ready();
+    const imageFiles = BusinessImagesDB.find({}).fetch();
     
     return{
         businessdb : BusinessDb.find({}).fetch(),
-        businessimagesdb : BusinessImagesDB.find({}).fetch(),
+        docsReadyYet,
+        imageFiles
     }
 })(UploadFile);

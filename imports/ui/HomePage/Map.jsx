@@ -17,52 +17,52 @@ class Map extends Component{
                 <div className="container">
                     <div className="row">
                         <div className="col-sm">
-                            <button onClick={e => this.setCity(e,'Lusaka')}>
+                            <button onClick={e => this.setCity(e,'LUSAKA')}>
                                 Lusaka
                             </button>
                         </div>
                         <div className="col-sm">
-                            <button onClick={e => this.setCity(e,'Kabwe')}>
+                            <button onClick={e => this.setCity(e,'CENTRALPROVINCE')}>
                                 Central
                             </button>
                         </div>
                         <div className="col-sm">
-                            <button onClick={e => this.setCity(e,'Ndola')}>
+                            <button onClick={e => this.setCity(e,'COPPERBELT')}>
                                 Copperbelt
                             </button>
                         </div>
                         <div className="col-sm">
-                            <button onClick={e => this.setCity(e, 'Livingstone')}>
+                            <button onClick={e => this.setCity(e, 'SOUTHERN')}>
                                 Southern
                             </button>
                         </div>
                         <div className="col-sm">
-                            <button onClick={e => this.setCity(e,'Chipata')}>
+                            <button onClick={e => this.setCity(e,'EASTERN')}>
                                 Eastern
                             </button>
                         </div>
                         <div className="col-sm">
-                            <button onClick={e => this.setCity(e, 'Solwezi')}>
+                            <button onClick={e => this.setCity(e, 'NORTHWESTERN')}>
                                 North-Western
                             </button>
                         </div>
                         <div className="col-sm">
-                            <button onClick={e => this.setCity(e,'Kasama')}>
+                            <button onClick={e => this.setCity(e,'NORTHERN')}>
                                 Northern
                             </button>
                         </div>
                         <div className="col-sm">
-                            <button onClick={e => this.setCity(e,'Mansa')}>
+                            <button onClick={e => this.setCity(e,'LUAPULA')}>
                                 Luapula
                             </button>
                         </div>
                         <div className="col-sm">
-                            <button onClick={e => this.setCity(e,'Mongu')}>
+                            <button onClick={e => this.setCity(e,'WESTERN')}>
                                 Western
                             </button>
                         </div>
                         <div className="col-sm">
-                            <button onClick={e => this.setCity(e, 'Chinsali')}>
+                            <button onClick={e => this.setCity(e, 'MUCHINGA')}>
                                 Muchinga
                             </button>
                         </div>

@@ -9,3 +9,9 @@ Meteor.publish('businessdb', ()=>{
 Meteor.publish('businessimagesdb', ()=>{
     return BusinessImagesDB.find();
 })
+
+Meteor.publish('files.all', ()=>{
+
+    return BusinessImagesDB.find().cursor;
+  
+  });

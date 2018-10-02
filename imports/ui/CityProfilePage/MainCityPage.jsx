@@ -103,7 +103,7 @@ class MainCityPage extends Component{
 
         switch(city){
 
-            case "Lusaka":
+            case "LUSAKA":
                 return(
                     <div>
                         
@@ -114,7 +114,7 @@ class MainCityPage extends Component{
                     </div>
                 );
                 break;
-            case "Mongu":
+            case "WESTERN":
                 return(
                     <div>
                         <h1>Western</h1>
@@ -123,7 +123,7 @@ class MainCityPage extends Component{
                     </div>
                 );
                 break;
-            case "Livingstone":
+            case "SOUTHERN":
                 return(
                     <div>
                         <h1>Southern</h1>
@@ -132,7 +132,7 @@ class MainCityPage extends Component{
                     </div>
                 );
                 break;
-            case "Kabwe":
+            case "CENTRALPROVINCE":
                 return(
                     <div>
                         <h1>Central Province</h1>
@@ -141,7 +141,7 @@ class MainCityPage extends Component{
                     </div>
                 );
                 break;
-            case "Ndola":
+            case "COPPERBELT":
                 return(
                     <div>
                         <h1>Copperbelt</h1>
@@ -150,7 +150,7 @@ class MainCityPage extends Component{
                     </div>
                 );
                 break;
-            case "Chipata":
+            case "EASTERN":
                 return(
                     <div>
                         <h1>Eastern Province</h1>
@@ -159,7 +159,7 @@ class MainCityPage extends Component{
                     </div>
                 );
                 break;
-            case "Mansa":
+            case "LUAPULA":
                 return(
                     <div>
                         <h1>Luapula</h1>
@@ -168,7 +168,7 @@ class MainCityPage extends Component{
                     </div>
                 );
                 break;
-            case "Solwezi":
+            case "NORTHWESTERN":
                 return(
                     <div>
                         <h1>North Western</h1>
@@ -177,7 +177,7 @@ class MainCityPage extends Component{
                     </div>
                 );
                 break;
-            case "Kasama":
+            case "NORTHERN":
                 return(
                     <div>
                         <h1>Northern</h1>
@@ -187,7 +187,7 @@ class MainCityPage extends Component{
                     </div>
                 );
                 break;
-            case "Chinsali":
+            case "MUCHINGA":
                 return(
                     <div>
                         <h1>Muchinga</h1>
@@ -225,5 +225,7 @@ class MainCityPage extends Component{
     }
 
 }
+
+
 
 export default MainCityPage;
