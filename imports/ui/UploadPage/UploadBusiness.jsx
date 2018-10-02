@@ -81,10 +81,11 @@ class UploadBusiness extends Component{
         const LocationID = this.state.Location;
         const Services = this.state.Service;
         const Provinces = this.state.Province;
+        const User = Meteor.user()._id;
 
         const NewBusiness = {
             Business, PhoneOne, PhoneTwo, EmailID,
-            LocationID, Services, Provinces
+            LocationID, Services, Provinces, User
         }
 
         Meteor.call('newBusiness', NewBusiness);

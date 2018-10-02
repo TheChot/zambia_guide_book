@@ -1,6 +1,9 @@
 import React, {Component} from 'react'
 import {Meteor} from 'meteor/meteor';
 import {Accounts} from 'meteor/accounts-base';
+import MyBusiness from './MyBusiness.jsx';
+import MyPlaces from './MyPlaces.jsx';
+import { withTracker } from 'meteor/react-meteor-data';
 
 class UserPage extends Component{
 
@@ -30,12 +33,22 @@ class UserPage extends Component{
         })
     }
 
+    setUser = () =>{
+        
+       // currentUser = String(Meteor.user()._id);
+        //Session.set("currentUser", currentUser);
+        console.log(Meteor.user()._id);
+    }
+
     render(){
         return(
             <div>
+                {this.setUser()}
                 <h1>User Page</h1>               
                 {this.displayUser()}
                 <button onClick={this.logoutUser}>Logout</button>
+                <MyBusiness/>
+                <MyPlaces/>
 
                 <div>
                     <div>

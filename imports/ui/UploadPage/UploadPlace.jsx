@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {BusinessDb, BusinessImagesDB} from '../../api/collections/collections.js';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
+import {Meteor} from 'meteor/meteor';
+import {Accounts} from 'meteor/accounts-base';
 
 class UploadPlace extends Component{
 
@@ -12,6 +14,7 @@ class UploadPlace extends Component{
             SiteName:'',            
             Location:'',
             Province:'',
+            AboutPlace:'',
             imagePreviewURL:'',
             imagefile:''
         }  
@@ -73,12 +76,14 @@ class UploadPlace extends Component{
         const Site = this.state.SiteName;        
         const LocationID = this.state.Location;
         const Provinces = this.state.Province;
+        const About = this.state.AboutPlace
+        const User = Meteor.user()._id;
 
-        const NewBusiness = {
-            Site, LocationID, Provinces
+        const NewSite = {
+            Site, LocationID, Provinces, About, User
         }
-
-        Meteor.call('newBusiness', NewBusiness);
+        console.log(Meteor.user()._id);
+        Meteor.call('newSite', NewSite);
 
     }
 
@@ -126,7 +131,7 @@ class UploadPlace extends Component{
                         <label htmlFor="">Location</label>
                         <input name="Location" type="text" onChange={this.handleInput}/><br/><br/>
                         <label htmlFor="">About</label>
-                        <input name="Service" type="textarea" onChange={this.handleInput}/><br/><br/>
+                        <input name="AboutPlace" type="textarea" onChange={this.handleInput}/><br/><br/>
                         
                         <button type="submit">Enter Data</button>
                     </form>
