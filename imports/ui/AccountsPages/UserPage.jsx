@@ -18,11 +18,24 @@ class UserPage extends Component{
         }
     }
 
+    logoutUser = (e) => {
+        e.preventDefault();
+
+        Meteor.logout((err)=>{
+            if(err){
+                console.log(err.reason);
+            } else{
+                FlowRouter.go('/Login')
+            }
+        })
+    }
+
     render(){
         return(
             <div>
                 <h1>User Page</h1>               
                 {this.displayUser()}
+                <button onClick={this.logoutUser}>Logout</button>
                 
                 
             </div>
