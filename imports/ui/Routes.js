@@ -8,7 +8,7 @@ import SignUp from './AccountsPages/SignUp.jsx';
 import UploadFile from './UploadPage/UploadFile.jsx';
 import ReportFile from './UploadPage/ReportFile.jsx';
 import NotFound from './NotFound.jsx';
-
+import UserPage from './AccountsPages/UserPage.jsx';
 
 FlowRouter.route('/',{
     name:'Home',
@@ -57,6 +57,13 @@ FlowRouter.route('/ReportFile',{
     name:'ReportFile',
     action:()=>{
         mount(ReportFile,{})
+    }
+});
+
+FlowRouter.route('/UserPage',{
+    name:'UserPage',
+    action:()=>{
+        mount(UserPage,{})
     }
 });
 

@@ -34,10 +34,6 @@ class UploadFile extends Component{
         e.preventDefault();
 
         const {target} = e;
-
-       
-
-
         
         if(target.Image.files && target.Image.files[0]){
             
