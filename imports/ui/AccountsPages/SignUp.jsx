@@ -46,15 +46,15 @@ class SignUp extends Component{
                 <form action="" onSubmit={this.newUser}>
                    
                     <label htmlFor="name">First Names:</label>
-                    <input type="text" name="firstName" id="name"/><br/>
+                    <input type="text" name="firstName" id="name" required/><br/>
                     <label htmlFor="name">Last Names:</label>
-                    <input type="text" name="lastName" id="name"/><br/>
+                    <input type="text" name="lastName" id="name" required/><br/>
                     <label htmlFor="name">Username:</label>
-                    <input type="text" name="username" id="name"/><br/>
+                    <input type="text" name="username" id="name" required/><br/>
                     <label htmlFor="password">Password:</label>
-                    <input type="password" name="password" id="password"/><br/>                        
+                    <input type="password" name="password" id="password" required/><br/>                        
                     <label htmlFor="email">Email:</label>
-                    <input type="text" name="email" id="email"/><br/>                    
+                    <input type="text" name="email" id="email" required/><br/>                    
                     <button type="submit" name="action">SUBMIT</button>
                 </form>            
                 

@@ -36,6 +36,15 @@ class UserPage extends Component{
                 <h1>User Page</h1>               
                 {this.displayUser()}
                 <button onClick={this.logoutUser}>Logout</button>
+
+                <div>
+                    <div>
+                        <a href="/UploadPlace"><h1>Add a Place</h1></a>
+                    </div>
+                    <div>
+                        <a href="/UploadBusiness"><h1>Add a Business</h1></a>
+                    </div>
+                </div>
                 
                 
             </div>

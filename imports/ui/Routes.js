@@ -9,8 +9,23 @@ import UploadFile from './UploadPage/UploadFile.jsx';
 import ReportFile from './UploadPage/ReportFile.jsx';
 import NotFound from './NotFound.jsx';
 import UserPage from './AccountsPages/UserPage.jsx';
+import UploadBusiness from './UploadPage/UploadBusiness.jsx';
+import UploadPage from './UploadPage/UploadPlace.jsx';
+import UploadPlace from './UploadPage/UploadPlace.jsx';
 
-FlowRouter.route('/',{
+
+
+let open;
+open = FlowRouter.group({});
+loggedIn = FlowRouter.group({
+    triggersEnter:[function(){
+        if(!(Meteor.loggingIn() || Meteor.userId())){
+            return FlowRouter.go('/Login')
+        }
+    }]
+})
+
+open.route('/',{
     name:'Home',
     action:()=>{
         mount(HomePage,{})
@@ -18,52 +33,65 @@ FlowRouter.route('/',{
 });
 
 
-FlowRouter.route('/MainCityPage',{
+open.route('/MainCityPage',{
     name:'MainCityPage',
     action:()=>{
         mount(MainCityPage,{})
     }
 });
-
-FlowRouter.route('/MainBusinessPage',{
+open.route('/MainBusinessPage',{
     name:'MainBusinessPage',
     action:()=>{
         mount(MainBusinessPage,{})
     }
 });
 
-FlowRouter.route('/Login',{
+open.route('/Login',{
     name:'Login',
     action:()=>{
         mount(Login,{})
     }
 });
 
-FlowRouter.route('/SignUp',{
+open.route('/SignUp',{
     name:'SignUp',
     action:()=>{
         mount(SignUp,{})
     }
 });
 
-FlowRouter.route('/UploadFile',{
+open.route('/UploadFile',{
     name:'UploadFile',
     action:()=>{
         mount(UploadFile,{})
     }
 });
 
-FlowRouter.route('/ReportFile',{
+open.route('/ReportFile',{
     name:'ReportFile',
     action:()=>{
         mount(ReportFile,{})
     }
 });
 
-FlowRouter.route('/UserPage',{
+loggedIn.route('/UserPage',{
     name:'UserPage',
     action:()=>{
         mount(UserPage,{})
+    }
+});
+
+loggedIn.route('/UploadBusiness',{
+    name:'UploadBusiness',
+    action:()=>{
+        mount(UploadBusiness,{})
+    }
+});
+
+loggedIn.route('/UploadPlace',{
+    name:'UploadPlace',
+    action:()=>{
+        mount(UploadPlace,{})
     }
 });
 
