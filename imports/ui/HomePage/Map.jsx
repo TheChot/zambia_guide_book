@@ -13,59 +13,80 @@ class Map extends Component{
     render(){
         return(
             <div>
-                <h1>Map</h1>
-                <div className="container">
-                    <div className="row">
-                        <div className="col-sm">
+                
+                <div id="slides" className="carousel slide" data-ride="carousel">
+                    <ul className="carousel-indicators">
+                        <li data-target="#slides" data-slide-to="0" className="active"></li>
+                        <li data-target="#slides" data-slide-to="1"></li>
+                        <li data-target="#slides" data-slide-to="2"></li>
+                    </ul>
+                    <div className="carousel-inner"> 
+                        <div className="carousel-item active">
+                            <img src="CarouselImages/mapofZambia.jpg" alt=""/>
+                        </div>
+                        <div className="carousel-item">
+                            <img src="CarouselImages/mapofZambia.jpg" alt=""/>
+                        </div>
+                        <div className="carousel-item">
+                            <img src="CarouselImages/mapofZambia.jpg" alt=""/>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="container-fluid padding">
+                    <div className="row text-center padding provinceChooser">
+                        
+                        <div className="col-sm provinceButton">
                             <button onClick={e => this.setCity(e,'LUSAKA')}>
                                 Lusaka
                             </button>
                         </div>
-                        <div className="col-sm">
+                        <div className="col-sm provinceButton">
                             <button onClick={e => this.setCity(e,'CENTRALPROVINCE')}>
                                 Central
                             </button>
                         </div>
-                        <div className="col-sm">
+                        <div className="col-sm provinceButton">
                             <button onClick={e => this.setCity(e,'COPPERBELT')}>
                                 Copperbelt
                             </button>
                         </div>
-                        <div className="col-sm">
+                        <div className="col-sm provinceButton">
                             <button onClick={e => this.setCity(e, 'SOUTHERN')}>
                                 Southern
                             </button>
                         </div>
-                        <div className="col-sm">
+                        <div className="col-sm provinceButton">
                             <button onClick={e => this.setCity(e,'EASTERN')}>
                                 Eastern
                             </button>
                         </div>
-                        <div className="col-sm">
+                        <div className="col-sm provinceButton">
                             <button onClick={e => this.setCity(e, 'NORTHWESTERN')}>
                                 North-Western
                             </button>
                         </div>
-                        <div className="col-sm">
+                        <div className="col-sm provinceButton">
                             <button onClick={e => this.setCity(e,'NORTHERN')}>
                                 Northern
                             </button>
                         </div>
-                        <div className="col-sm">
+                        <div className="col-sm provinceButton">
                             <button onClick={e => this.setCity(e,'LUAPULA')}>
                                 Luapula
                             </button>
                         </div>
-                        <div className="col-sm">
+                        <div className="col-sm provinceButton">
                             <button onClick={e => this.setCity(e,'WESTERN')}>
                                 Western
                             </button>
                         </div>
-                        <div className="col-sm">
+                        <div className="col-sm provinceButton">
                             <button onClick={e => this.setCity(e, 'MUCHINGA')}>
                                 Muchinga
                             </button>
                         </div>
+                        
                     </div>
                 </div>               
                

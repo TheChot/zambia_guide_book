@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Meteor} from 'meteor/meteor';
 import {Accounts} from 'meteor/accounts-base';
+import Navbar from '../HomePage/Navbar.jsx';
 
 class Login extends Component{
 
@@ -23,6 +24,7 @@ class Login extends Component{
     render(){
         return(
             <div>
+                <Navbar/>
                 <h1>Login</h1>
                 <form action="" onSubmit ={this.loginUser}>
                     <label htmlFor="">UserName:</label>

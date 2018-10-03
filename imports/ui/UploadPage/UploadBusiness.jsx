@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {BusinessDb, BusinessImagesDB} from '../../api/collections/collections.js';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
+import Navbar from '../HomePage/Navbar.jsx';
 
 class UploadBusiness extends Component{
 
@@ -111,6 +112,7 @@ class UploadBusiness extends Component{
 
             return(
                 <div>
+                    <Navbar/>
                     <h1>Upload</h1>
                     <form action="" onSubmit = {this.handleSubmit}>
                         <label htmlFor="">Upload an image</label>

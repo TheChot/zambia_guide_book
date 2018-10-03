@@ -2,3 +2,52 @@ body {
   padding: 10px;
   font-family: sans-serif;
 }
+
+.navbar
+{
+    padding: .8rem;
+}
+.navbar-nav li
+{
+    padding-right: 20px;
+}
+
+.loggedOutNav
+{
+  
+  margin-left: 60%;
+}
+.loggedInNav
+{
+  margin-left: 40%;
+}
+
+/* Firefox Fix */
+.carousel-item
+{
+    transition: --webkit-transform 0.5s ease;
+    transition: transform 0.5s ease;
+    transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+    --webkit-backface-visibility: visible;
+    backface-visibility: visible;
+}
+
+.provinceChooser
+{
+  margin-top: 3%;
+}
+
+.provinceButton
+{
+  margin: 1rem 0rem 1rem 0rem;
+}
+
+.mainButtons
+{
+  margin: 1rem 0rem 1rem 0rem;
+}
+
+.mainButtons button
+{
+  margin: .5rem 0rem .5rem 0rem;
+}

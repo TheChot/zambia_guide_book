@@ -57,13 +57,25 @@ class HomePage extends Component{
     render(){
         return(
             <div>
-                <Navbar/>
-                <h1>Home Page</h1>
+                <Navbar/>  
                 <Map/>
-
-                <button onClick ={this.setTrending}>Trending</button>
-                <button onClick ={this.setWhatToDo}>What To Do</button>
-                <button onClick ={this.setFavPics}>Favourite Pictures</button>
+                <div className = "container-fluid padding mainButtons">
+                    <div className="row text-center padding">
+                        <div className="col-xs-12 col-sm-6 col-md-4">
+                            <button onClick ={this.setTrending}>Trending</button>
+                        </div>
+                        <div className="col-xs-12 col-sm-6 col-md-4">
+                            <button onClick ={this.setWhatToDo}>What To Do</button>
+                        </div>
+                        <div className="col-xs-12 col-sm-6 col-md-4">
+                            <button onClick ={this.setFavPics}>Favourite Pictures</button>
+                        </div>
+                        
+                        
+                        
+                    </div>
+                </div>
+                
                 {this.setComponent()}
                 
             </div>

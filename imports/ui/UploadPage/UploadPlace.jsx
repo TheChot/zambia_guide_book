@@ -4,6 +4,7 @@ import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import {Meteor} from 'meteor/meteor';
 import {Accounts} from 'meteor/accounts-base';
+import Navbar from '../HomePage/Navbar.jsx';
 
 class UploadPlace extends Component{
 
@@ -106,6 +107,7 @@ class UploadPlace extends Component{
 
             return(
                 <div>
+                    <Navbar/>
                     <h1>Upload</h1>
                     <form action="" onSubmit = {this.handleSubmit}>
                         <label htmlFor="">Upload an image</label>

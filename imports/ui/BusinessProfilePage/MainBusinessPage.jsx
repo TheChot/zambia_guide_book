@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import BusinessPictures from './BusinessPictures.jsx';
 import Services from './Services.jsx';
 import AboutBusiness from './AboutBusiness.jsx';
-
+import Navbar from '../HomePage/Navbar.jsx';
 
 class MainBusinessPage extends Component{
 
@@ -55,6 +55,7 @@ class MainBusinessPage extends Component{
     render(){
         return(
             <div>
+                <Navbar/>
                 <h1>Business Page</h1>
                 <button onClick={this.setPictures}>Pictures</button>
                 <button onClick={this.setServices}>Services</button>

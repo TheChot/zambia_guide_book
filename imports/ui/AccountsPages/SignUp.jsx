@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {Meteor} from 'meteor/meteor';
 import {Accounts} from 'meteor/accounts-base';
+import Navbar from '../HomePage/Navbar.jsx';
 
 class SignUp extends Component{
 
@@ -42,6 +43,7 @@ class SignUp extends Component{
     render(){
         return(
             <div>
+                <Navbar/>
                 <h1>Sign Up</h1>               
                 <form action="" onSubmit={this.newUser}>
                    
