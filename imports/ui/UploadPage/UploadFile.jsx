@@ -107,38 +107,43 @@ class UploadFile extends Component{
                 <div>
                     <Navbar/>
                     <h1>Upload</h1>
-                    <form action="" onSubmit = {this.handleSubmit}>
-                        <label htmlFor="">Upload an image</label>
-                        <input type="file" name="Image" onChange={this.handleInput}/><br/><br/>
-                        <label htmlFor="">Business Name</label>
-                        <input name="BusinessName" type="text" onChange={this.handleInput}/><br/><br/>
-                        <label htmlFor="">Phone Number 1</label>
-                        <input name="PhoneNumberOne" type="text" onChange={this.handleInput}/><br/><br/>
-                        <label htmlFor="">Phone Number 2</label>
-                        <input name="PhoneNumberTwo" type="text" onChange={this.handleInput}/><br/><br/>
-                        <label htmlFor="">Email</label>
-                        <input name="Email" type="text" onChange={this.handleInput}/><br/><br/>
-                        <label htmlFor="">Province</label>
-                        <select name="Province" id="" onChange={this.handleInput}>
-                            <option value="LUSAKA">Lusaka</option>
-                            <option value="CENTRAL">Central</option>
-                            <option value="COPPERBELT">Copperbelt</option>
-                            <option value="EASTERN">Eastern</option>
-                            <option value="NORTHERN">Northern</option>
-                            <option value="SOUTHERN">Southern</option>
-                            <option value="MUCHINGA">Muchinga</option>
-                            <option value="NORTHWESTERN">North Western</option>
-                            <option value="LUAPULA">Luapula</option>
-                            <option value="WESTERN">Western</option>
-                        </select>
-                        <br/><br/>
-                        <label htmlFor="">Location</label>
-                        <input name="Location" type="text" onChange={this.handleInput}/><br/><br/>
-                        <label htmlFor="">Service</label>
-                        <input name="Service" type="text" onChange={this.handleInput}/><br/><br/>
-                        
-                        <button type="submit">Enter Data</button>
-                    </form>
+                    <div className="card">
+                        <form action="" onSubmit = {this.handleSubmit} className="text-center">
+                            <div>                                
+                                <label htmlFor="">Upload an image</label>
+                                <input 
+                                    type="file" 
+                                    name="Image" 
+                                    onChange={this.handleInput}/><br/><br/>                                
+                            </div>
+                            <select name="Province" id="" onChange={this.handleInput} className="browser-default custom-select mb-4" required>
+                                <option value="">Select A Province</option>
+                                <option value="LUSAKA">Lusaka</option>
+                                <option value="CENTRAL">Central</option>
+                                <option value="COPPERBELT">Copperbelt</option>
+                                <option value="EASTERN">Eastern</option>
+                                <option value="NORTHERN">Northern</option>
+                                <option value="SOUTHERN">Southern</option>
+                                <option value="MUCHINGA">Muchinga</option>
+                                <option value="NORTHWESTERN">North Western</option>
+                                <option value="LUAPULA">Luapula</option>
+                                <option value="WESTERN">Western</option>
+                            </select><br/><br/>                                
+                           
+                            <div className="md-form">                                
+                                <input 
+                                    name="Location" 
+                                    type="text" 
+                                    onChange={this.handleInput} 
+                                    id="formLocation" 
+                                    className="form-control"
+                                    placeholder="LOCATION"/><br/><br/>
+                                
+                            </div>
+                            
+                            <button type="submit">Enter Data</button>
+                        </form>
+                    </div>
                     {$imagePreview}
                     
                 </div>

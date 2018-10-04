@@ -12,54 +12,100 @@ class SignUp extends Component{
         const {target} = e;
         const name = target.name.value
         const password= target.password.value
+        const confirmPassword = target.confirmpassword.value;
         const email= target.email.value
         const firstName = target.firstName.value;
         const lastName = target.lastName.value;
 
            
-          const profile = {
-             email,
-             name,
-             firstName,
-             lastName
-           };
-           const user = {
-             email,password,
-             profile,
-           }
-    
-           Accounts.createUser(user, (err) =>{
-             if (err)
-             {
-               console.log(err.reason);
-             }
-             else {
-                FlowRouter.go('/UserPage')
+        if(password != confirmPassword){
+            alert("Passwords Do Not Match");
+        } else{        
+            const profile = {
+                email,
+                name,
+                firstName,
+                lastName
+            };
+            const user = {
+                email,password,
+                profile,
             }
-          }
-         );
+        
+            Accounts.createUser(user, (err) =>{
+                if (err)
+                {
+                console.log(err.reason);
+                }
+                else {
+                    FlowRouter.go('/UserPage')
+                }
+            }
+            );
+        }
       }
 
     render(){
         return(
             <div>
                 <Navbar/>
-                <h1>Sign Up</h1>               
-                <form action="" onSubmit={this.newUser}>
-                   
-                    <label htmlFor="name">First Names:</label>
-                    <input type="text" name="firstName" id="name" required/><br/>
-                    <label htmlFor="name">Last Names:</label>
-                    <input type="text" name="lastName" id="name" required/><br/>
-                    <label htmlFor="name">Username:</label>
-                    <input type="text" name="username" id="name" required/><br/>
-                    <label htmlFor="password">Password:</label>
-                    <input type="password" name="password" id="password" required/><br/>                        
-                    <label htmlFor="email">Email:</label>
-                    <input type="text" name="email" id="email" required/><br/>                    
-                    <button type="submit" name="action">SUBMIT</button>
-                </form>            
-                
+                <h1>Sign Up</h1>
+                <div>
+                    <form action="" onSubmit={this.newUser}>
+                        <div className="md-form mt-3">
+                            <input 
+                                type="text" 
+                                name="firstName" 
+                                id="name"
+                                className="form-control"
+                                placeholder="First Name"
+                                required/><br/>
+                        </div>
+                        <div className="md-form">
+                            <input 
+                                type="text" 
+                                name="lastName" 
+                                id="name"
+                                className="form-control"
+                                placeholder="Last Name" 
+                                required/><br/>
+                        </div>
+                        <div className="md-form">
+                            <input 
+                                type="text" 
+                                name="email" 
+                                id="email" 
+                                className="form-control"
+                                placeholder="E-mail"
+                                required/><br/> 
+                        </div>
+                        <div className="md-form">
+                            <input 
+                                type="password" 
+                                name="password" 
+                                id="password"
+                                className="form-control" 
+                                placeholder="Password"
+                                required/><br/>
+                        </div>
+                        <div className="md-form">
+                            <input 
+                                type="password" 
+                                name="confirmpassword" 
+                                id="password"
+                                className="form-control"
+                                placeholder="Confirm Password" 
+                                required/><br/>
+                        </div>
+                        <button 
+                            type="submit" 
+                            name="action"
+                            className ="btn btn-info my-4 btn-block">
+                                SUBMIT
+                        </button>
+                    </form>  
+                </div>
+                    
             </div>
         )
     }
