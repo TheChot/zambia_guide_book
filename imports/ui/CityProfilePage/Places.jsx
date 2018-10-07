@@ -7,12 +7,15 @@ class Places extends Component{
 
     getPosts = () => {
         const businessdb = this.props.businessdb;
-
+        const businessimagesdb = this.props.businessimagesdb;
+        const files = BusinessImagesDB.findOne({_id:'9B7TNGPxZ86zDZigj'}).link();
         //console.log(resolutions)
         
         return businessdb.map((businessdb)=>{
             return(
                 <div key = {businessdb._id}>
+                    <img src={files} alt={businessimagesdb.name}/>
+                    {/* {this.getImages(businessdb.Business)} */}
                     <h3>{businessdb.Business}</h3>
                     <h3>{businessdb.LocationID}</h3>
                     <h3>{businessdb.Provinces}</h3>
@@ -22,24 +25,25 @@ class Places extends Component{
         })
     }
 
-    getImages = () =>{
+    // getImages = (businessName) =>{
         
-        const businessimagesdb = this.props.businessimagesdb;
+    //     const businessimagesdb = this.props.businessimagesdb;
+    //     //const MetaData = businessimagesdb.meta.BusinessName;
         
 
-        //const link = BusinessImagesDB.find({}).link();
-        return businessimagesdb.map((businessimagesdb)=>{
-            const files = BusinessImagesDB.findOne({_id:"hFDo2b6DAnqvhnNhK"}).link();
+    //     //const link = BusinessImagesDB.find({}).link(); _id:'fFzvDd6e3DgFcbwaS'
+    //     return businessimagesdb.map((businessimagesdb)=>{
+    //         const files = BusinessImagesDB.findOne({_id:'9B7TNGPxZ86zDZigj'}).link();
 
-            return(
-                <div key ={businessimagesdb._id}>
-                    <img src={files} alt={businessimagesdb.name}/>
-                    <h1>{businessimagesdb.name}</h1>
-                </div>
-            )
-        })
+    //         return(
+    //             <div key ={businessimagesdb._id}>
+    //                 <img src={files} alt={businessimagesdb.name}/>
+                    
+    //             </div>
+    //         )
+    //     })
 
-    }
+    // }
 
 
     render(){
@@ -48,7 +52,7 @@ class Places extends Component{
                 <div>
                     <h1>Places</h1>
                     {this.getPosts()}
-                    {this.getImages()}
+                    
                 </div>
             )
         } else{

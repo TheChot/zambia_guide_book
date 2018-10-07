@@ -35,6 +35,14 @@ class UploadBusiness extends Component{
         e.preventDefault();
 
         const {target} = e;
+        const Business = this.state.BusinessName;
+        const PhoneOne = this.state.PhoneNumberOne;
+        const PhoneTwo = this.state.PhoneNumberTwo;
+        const EmailID = this.state.Email;
+        const LocationID = this.state.Location;
+        const Services = this.state.Service;
+        const Provinces = this.state.Province;
+        const User = Meteor.user()._id;
         
         if(target.Image.files && target.Image.files[0]){
             
@@ -65,7 +73,8 @@ class UploadBusiness extends Component{
                     file: imageUploader,
                     meta: {
                       //locator: self.props.fileLocator,
-                      userId: Meteor.userId() // Optional, used to check on server for file tampering
+                      userId: Meteor.userId(),
+                      BusinessName: Business
                     },
                     streams: 'dynamic',
                     chunkSize: 'dynamic',
@@ -75,14 +84,7 @@ class UploadBusiness extends Component{
                   uploadInstance.start();
             }
         }
-        const Business = this.state.BusinessName;
-        const PhoneOne = this.state.PhoneNumberOne;
-        const PhoneTwo = this.state.PhoneNumberTwo;
-        const EmailID = this.state.Email;
-        const LocationID = this.state.Location;
-        const Services = this.state.Service;
-        const Provinces = this.state.Province;
-        const User = Meteor.user()._id;
+        
 
         const NewBusiness = {
             Business, PhoneOne, PhoneTwo, EmailID,

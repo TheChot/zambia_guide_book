@@ -19,16 +19,30 @@ class Map extends Component{
                         <li data-target="#slides" data-slide-to="0" className="active"></li>
                         <li data-target="#slides" data-slide-to="1"></li>
                         <li data-target="#slides" data-slide-to="2"></li>
+                        <li data-target="#slides" data-slide-to="3"></li>
+                        <li data-target="#slides" data-slide-to="4"></li>
+                        <li data-target="#slides" data-slide-to="5"></li>
+                        
+
                     </ul>
                     <div className="carousel-inner"> 
                         <div className="carousel-item active">
-                            <img src="CarouselImages/mapofZambia.jpg" alt=""/>
+                            <img src="CarouselImages/Carousel.jpg" alt="" className="carouselImage"/>
                         </div>
                         <div className="carousel-item">
-                            <img src="CarouselImages/mapofZambia.jpg" alt=""/>
+                            <img src="CarouselImages/Carousel5.jpg" alt="" className="carouselImage"/>
                         </div>
                         <div className="carousel-item">
-                            <img src="CarouselImages/mapofZambia.jpg" alt=""/>
+                            <img src="CarouselImages/Carousel7.jpg" alt="" className="carouselImage"/>
+                        </div>
+                        <div className="carousel-item">
+                            <img src="CarouselImages/Carousel1.jpg" alt="" className="carouselImage"/>
+                        </div>
+                        <div className="carousel-item">
+                            <img src="CarouselImages/Carousel2.jpg" alt="" className="carouselImage"/>
+                        </div>
+                        <div className="carousel-item">
+                            <img src="CarouselImages/Carousel4.jpg" alt="" className="carouselImage"/>
                         </div>
                     </div>
                 </div>

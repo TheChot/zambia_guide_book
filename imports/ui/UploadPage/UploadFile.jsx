@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {BusinessDb, BusinessImagesDB} from '../../api/collections/collections.js';
+import {BusinessDb, BusinessImagesDB, ImagesDB} from '../../api/collections/collections.js';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import Navbar from '../HomePage/Navbar.jsx';
@@ -28,6 +28,12 @@ class UploadFile extends Component{
         e.preventDefault();
 
         const {target} = e;
+
+              
+        const LocationID = this.state.Location;
+        
+        const Provinces = this.state.Province;
+        //const User = Meteor.user()._id;
         
         if(target.Image.files && target.Image.files[0]){
             
@@ -54,11 +60,14 @@ class UploadFile extends Component{
 
 
             if (imageUploader){
-                let uploadInstance = BusinessImagesDB.insert({
+                let uploadInstance = ImagesDB.insert({
                     file: imageUploader,
                     meta: {
                       //locator: self.props.fileLocator,
-                      userId: Meteor.userId() // Optional, used to check on server for file tampering
+                      userId: Meteor.userId(), // Optional, used to check on server for file tampering
+                      provinces: Provinces,
+                      Location: LocationID
+
                     },
                     streams: 'dynamic',
                     chunkSize: 'dynamic',
@@ -68,21 +77,11 @@ class UploadFile extends Component{
                   uploadInstance.start();
             }
         }
-        const Business = this.state.BusinessName;
-        const PhoneOne = this.state.PhoneNumberOne;
-        const PhoneTwo = this.state.PhoneNumberTwo;
-        const EmailID = this.state.Email;
-        const LocationID = this.state.Location;
-        const Services = this.state.Service;
-        const Provinces = this.state.Province;
-        const User = Meteor.user()._id;
+        
 
-        const NewBusiness = {
-            Business, PhoneOne, PhoneTwo, EmailID,
-            LocationID, Services, Provinces, User
-        }
+       
 
-        Meteor.call('newBusiness', NewBusiness);
+     
 
     }
 
@@ -159,14 +158,14 @@ class UploadFile extends Component{
 }
 
 export default withTracker(()=>{
-    Meteor.subscribe('businessdb');
-    Meteor.subscribe('businessimagesdb');
+    
+    Meteor.subscribe('imagesdb');
     const filesHandle = Meteor.subscribe('files.all');
     const docsReadyYet = filesHandle.ready();
     const imageFiles = BusinessImagesDB.find({}).fetch();
     
     return{
-        businessdb : BusinessDb.find({}).fetch(),
+        imagesdb : ImagesDB.find({}).fetch(),
         docsReadyYet,
         imageFiles
     }
