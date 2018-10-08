@@ -5,13 +5,19 @@ import { withTracker } from 'meteor/react-meteor-data';
 
 class Places extends Component{
 
+    goToBusiness = (e,businessid) =>{
+        Session.set("businessid",businessid);
+        FlowRouter.go('/MainBusinessPage');
+    }
+
     getPosts = () => {
         const businessdb = this.props.businessdb;
         const businessimagesdb = this.props.businessimagesdb;
-        const files = BusinessImagesDB.findOne({_id:'9B7TNGPxZ86zDZigj'}).link();
+        
         //console.log(resolutions)
         
         return businessdb.map((businessdb)=>{
+            const files = BusinessImagesDB.findOne({'meta.BusinessName':businessdb.Business}).link();
             return(
                 <div key = {businessdb._id}>
                     <img src={files} alt={businessimagesdb.name}/>
@@ -19,7 +25,7 @@ class Places extends Component{
                     <h3>{businessdb.Business}</h3>
                     <h3>{businessdb.LocationID}</h3>
                     <h3>{businessdb.Provinces}</h3>
-                    
+                    <button onClick={e => this.goToBusiness(e,businessdb._id)}>Check it Out</button>
                 </div>
             )
         })

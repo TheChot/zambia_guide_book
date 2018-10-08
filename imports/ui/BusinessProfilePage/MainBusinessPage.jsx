@@ -3,6 +3,8 @@ import BusinessPictures from './BusinessPictures.jsx';
 import Services from './Services.jsx';
 import AboutBusiness from './AboutBusiness.jsx';
 import Navbar from '../HomePage/Navbar.jsx';
+import { withTracker } from 'meteor/react-meteor-data';
+import {BusinessDb, BusinessImagesDB, ImagesDB} from '../../api/collections/collections.js';
 
 class MainBusinessPage extends Component{
 
@@ -53,10 +55,22 @@ class MainBusinessPage extends Component{
     }
 
     render(){
+        const files = BusinessImagesDB.findOne({'meta.BusinessName':businessdb.Business}).link();
+        const businessdb = this.props.businessdb;
+
         return(
-            <div>
+            <div key = {businessdb._id}>
                 <Navbar/>
                 <h1>Business Page</h1>
+                <div>
+                    <img src={files} alt=""/>
+                    <h3>{businessdb.Business}</h3>
+                    <h3>{businessdb.PhoneOne}</h3>
+                    <h3>{businessdb.PhoneTwo}</h3>
+                    <h3>{businessdb.EmailID}</h3>
+                    <h3>{businessdb.LocationID}</h3>
+                    <h3>{businessdb.Provinces}</h3>
+                </div>
                 <button onClick={this.setPictures}>Pictures</button>
                 <button onClick={this.setServices}>Services</button>
                 <button onClick={this.setAbout}>About</button>
@@ -67,4 +81,17 @@ class MainBusinessPage extends Component{
 
 }
 
-export default MainBusinessPage;
+export default withTracker(()=>{
+    Meteor.subscribe('businessdb');
+    Meteor.subscribe('files.all');
+    Meteor.subscribe('businessimagesdb');
+    const businessId = Session.get("businessid");
+    
+    let isDataReady = Meteor.subscribe('files.all');
+    return{
+        businessdb : BusinessDb.find({_id:businessId}).fetch(),
+        businessimagesdb : BusinessImagesDB.find({}).fetch(),     
+        
+        isDataReady: isDataReady.ready(),
+    }
+})(MainBusinessPage);

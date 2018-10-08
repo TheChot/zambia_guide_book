@@ -42,12 +42,16 @@ class FavouritePictures extends Component{
 
     // }
     render(){
-        return(
-            <div>
-                <h1>Favourite Pictures</h1>
-                {this.getPictures()}
-            </div>
-        )
+        //if(this.props.isDataReady){
+            return(
+                <div>
+                    <h1>Favourite Pictures</h1>
+                    {this.getPictures()}
+                </div>
+            )
+      
+       // }
+        
     }
 
 }
@@ -55,13 +59,13 @@ class FavouritePictures extends Component{
 export default withTracker(()=>{
     
     Meteor.subscribe('imagesdb');
-    //const filesHandle = Meteor.subscribe('files.all');
-    //const docsReadyYet = filesHandle.ready();
+    const filesHandle = Meteor.subscribe('imagesdb');
+    const docsReadyYet = filesHandle.ready();
     //const imageFiles = ImagesDB.find({}).fetch();
     
     return{
         imagesdb : ImagesDB.find({}).fetch(),
-        //docsReadyYet,
+        docsReadyYet,
         //imageFiles
     }
 })(FavouritePictures);
