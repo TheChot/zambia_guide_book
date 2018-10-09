@@ -34,6 +34,12 @@ class UploadPlace extends Component{
         e.preventDefault();
 
         const {target} = e;
+
+        const Site = this.state.SiteName;        
+        const LocationID = this.state.Location;
+        const Provinces = this.state.Province;
+        const About = this.state.AboutPlace
+        const User = Meteor.user()._id;
         
         if(target.Image.files && target.Image.files[0]){
             
@@ -64,7 +70,8 @@ class UploadPlace extends Component{
                     file: imageUploader,
                     meta: {
                       //locator: self.props.fileLocator,
-                      userId: Meteor.userId() // Optional, used to check on server for file tampering
+                      userId: Meteor.userId(), // Optional, used to check on server for file tampering
+                      BusinessName: Site
                     },
                     streams: 'dynamic',
                     chunkSize: 'dynamic',
@@ -74,17 +81,14 @@ class UploadPlace extends Component{
                   uploadInstance.start();
             }
         }
-        const Site = this.state.SiteName;        
-        const LocationID = this.state.Location;
-        const Provinces = this.state.Province;
-        const About = this.state.AboutPlace
-        const User = Meteor.user()._id;
+       
 
         const NewSite = {
             Site, LocationID, Provinces, About, User
         }
         console.log(Meteor.user()._id);
         Meteor.call('newSite', NewSite);
+        alert("Attraction Uploaded");
 
     }
 
@@ -174,7 +178,7 @@ class UploadPlace extends Component{
                         </form>
                     </div>
                     
-                    {$imagePreview}
+                    
                     
                 </div>
             )

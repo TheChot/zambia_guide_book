@@ -8,6 +8,7 @@ import {BusinessDb, BusinessImagesDB, ImagesDB} from '../../api/collections/coll
 
 class MainBusinessPage extends Component{
 
+    /*
     constructor(){
         super();
 
@@ -42,6 +43,8 @@ class MainBusinessPage extends Component{
         })
     }
 
+    
+
     setComponent = () =>{
 
         if (this.state.BusinessPicturesComp){
@@ -53,28 +56,43 @@ class MainBusinessPage extends Component{
         }
 
     }
+    */
+    getPosts = () => {
+        const businessdb = this.props.businessdb;
+        const businessimagesdb = this.props.businessimagesdb;
+        
+        //console.log(resolutions)
+        
+        return businessdb.map((businessdb)=>{
+            const files = BusinessImagesDB.findOne({'meta.BusinessName':businessdb.Business}).link();
+            return(
+                <div key = {businessdb._id}>
+                    <img src={files} alt={businessimagesdb.name}/>
+                    {/* {this.getImages(businessdb.Business)} */}
+                    <h3>{businessdb.Business}</h3>
+                    <h3>{businessdb.LocationID}</h3>
+                    <h3>{businessdb.Provinces}</h3>
+                    
+                </div>
+            )
+        })
+    }
 
     render(){
-        const files = BusinessImagesDB.findOne({'meta.BusinessName':businessdb.Business}).link();
-        const businessdb = this.props.businessdb;
+        // const files = BusinessImagesDB.findOne({'meta.BusinessName':businessdb.Business}).link();
+        // const businessdb = this.props.businessdb;
 
         return(
-            <div key = {businessdb._id}>
+            <div >
                 <Navbar/>
                 <h1>Business Page</h1>
                 <div>
-                    <img src={files} alt=""/>
-                    <h3>{businessdb.Business}</h3>
-                    <h3>{businessdb.PhoneOne}</h3>
-                    <h3>{businessdb.PhoneTwo}</h3>
-                    <h3>{businessdb.EmailID}</h3>
-                    <h3>{businessdb.LocationID}</h3>
-                    <h3>{businessdb.Provinces}</h3>
+                    {this.getPosts()}
                 </div>
-                <button onClick={this.setPictures}>Pictures</button>
+                {/* <button onClick={this.setPictures}>Pictures</button>
                 <button onClick={this.setServices}>Services</button>
                 <button onClick={this.setAbout}>About</button>
-                {this.setComponent()}
+                {this.setComponent()} */}
             </div>
         )
     }

@@ -92,6 +92,7 @@ class UploadBusiness extends Component{
         }
 
         Meteor.call('newBusiness', NewBusiness);
+        alert("Business Uploaded");
 
     }
 
@@ -209,7 +210,7 @@ class UploadBusiness extends Component{
                         </form>
                     </div>
                     
-                    {$imagePreview}
+                    
                     
                 </div>
             )
