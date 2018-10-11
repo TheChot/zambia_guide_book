@@ -16,37 +16,37 @@ class Map extends Component{
         return(
             <div>
                 
-                <div id="slides" className="carousel slide" data-ride="carousel">
-                    <ul className="carousel-indicators">
-                        <li data-target="#slides" data-slide-to="0" className="active"></li>
-                        <li data-target="#slides" data-slide-to="1"></li>
-                        <li data-target="#slides" data-slide-to="2"></li>
-                        <li data-target="#slides" data-slide-to="3"></li>
-                        <li data-target="#slides" data-slide-to="4"></li>
-                        <li data-target="#slides" data-slide-to="5"></li>
-                        
-
-                    </ul>
-                    <div className="carousel-inner"> 
+                <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
+                    <div className="carousel-inner">
                         <div className="carousel-item active">
-                            <img src="CarouselImages/Carousel.jpg" alt="" className="carouselImage"/>
+                            <img className="d-block w-100" src="CarouselImages/Carousel.jpg" alt="First slide"/>
                         </div>
                         <div className="carousel-item">
-                            <img src="CarouselImages/Carousel5.jpg" alt="" className="carouselImage"/>
+                            <img className="d-block w-100" src="CarouselImages/Carousel5.jpg" alt="First slide"/>
                         </div>
                         <div className="carousel-item">
-                            <img src="CarouselImages/Carousel7.jpg" alt="" className="carouselImage"/>
+                            <img className="d-block w-100" src="CarouselImages/Carousel7.jpg" alt="First slide"/>
                         </div>
                         <div className="carousel-item">
-                            <img src="CarouselImages/Carousel1.jpg" alt="" className="carouselImage"/>
+                            <img className="d-block w-100" src="CarouselImages/Carousel1.jpg" alt="First slide"/>
                         </div>
                         <div className="carousel-item">
-                            <img src="CarouselImages/Carousel2.jpg" alt="" className="carouselImage"/>
+                            <img className="d-block w-100" src="CarouselImages/Carousel2.jpg" alt="First slide"/>
                         </div>
                         <div className="carousel-item">
-                            <img src="CarouselImages/Carousel4.jpg" alt="" className="carouselImage"/>
+                            <img className="d-block w-100" src="CarouselImages/Carousel4.jpg" alt="First slide"/>
                         </div>
+                    
                     </div>
+                    <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span className="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                        <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span className="sr-only">Next</span>
+                    </a>
+
                 </div>
 
                 <div className="container-fluid padding">
