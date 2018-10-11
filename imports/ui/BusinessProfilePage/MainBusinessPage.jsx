@@ -3,9 +3,12 @@ import BusinessPictures from './BusinessPictures.jsx';
 import Services from './Services.jsx';
 import AboutBusiness from './AboutBusiness.jsx';
 import Navbar from '../HomePage/Navbar.jsx';
+import { withTracker } from 'meteor/react-meteor-data';
+import {BusinessDb, BusinessImagesDB, ImagesDB} from '../../api/collections/collections.js';
 
 class MainBusinessPage extends Component{
 
+    /*
     constructor(){
         super();
 
@@ -40,6 +43,8 @@ class MainBusinessPage extends Component{
         })
     }
 
+    
+
     setComponent = () =>{
 
         if (this.state.BusinessPicturesComp){
@@ -51,36 +56,60 @@ class MainBusinessPage extends Component{
         }
 
     }
+    */
+    getPosts = () => {
+        const businessdb = this.props.businessdb;
+        const businessimagesdb = this.props.businessimagesdb;
+        
+        //console.log(resolutions)
+        
+        return businessdb.map((businessdb)=>{
+            const files = BusinessImagesDB.findOne({'meta.BusinessName':businessdb.Business}).link();
+            return(
+                <div key = {businessdb._id}>
+                    <img src={files} alt={businessimagesdb.name}/>
+                    {/* {this.getImages(businessdb.Business)} */}
+                    <h3>{businessdb.Business}</h3>
+                    <h3>{businessdb.LocationID}</h3>
+                    <h3>{businessdb.Provinces}</h3>
+                    
+                </div>
+            )
+        })
+    }
 
     render(){
+        // const files = BusinessImagesDB.findOne({'meta.BusinessName':businessdb.Business}).link();
+        // const businessdb = this.props.businessdb;
+
         return(
-            <div>
+            <div >
                 <Navbar/>
                 <h1>Business Page</h1>
-                <div className = "container-fluid padding mainButtons">
-                    <div className="row text-center padding">
-                        <div className="col-xs-12 col-sm-6 col-md-4">
-                            <button className="button1" onClick={this.setPictures}>Pictures</button>
-                        </div>
-                        <div className="col-xs-12 col-sm-6 col-md-4">
-                            <button className="button2" onClick={this.setServices}>Services</button>
-                        </div>
-                        <div className="col-xs-12 col-sm-6 col-md-4">
-                            <button className="button3" onClick={this.setAbout}>About</button>
-                        </div>
-                        
-                        
-                        
-                    </div>
+                <div>
+                    {this.getPosts()}
                 </div>
-                
-                
-                
-                {this.setComponent()}
+                {/* <button onClick={this.setPictures}>Pictures</button>
+                <button onClick={this.setServices}>Services</button>
+                <button onClick={this.setAbout}>About</button>
+                {this.setComponent()} */}
             </div>
         )
     }
 
 }
 
-export default MainBusinessPage;
+export default withTracker(()=>{
+    Meteor.subscribe('businessdb');
+    Meteor.subscribe('files.all');
+    Meteor.subscribe('businessimagesdb');
+    const businessId = Session.get("businessid");
+    
+    let isDataReady = Meteor.subscribe('files.all');
+    return{
+        businessdb : BusinessDb.find({_id:businessId}).fetch(),
+        businessimagesdb : BusinessImagesDB.find({}).fetch(),     
+        
+        isDataReady: isDataReady.ready(),
+    }
+})(MainBusinessPage);

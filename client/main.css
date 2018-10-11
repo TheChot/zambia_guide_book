@@ -101,3 +101,9 @@ background-color: rgb(100, 90, 0);
 {
   margin: .5rem 0rem .5rem 0rem;
 }
+
+.carouselImage
+{
+  width: 1280px;
+  height: 750px;
+}

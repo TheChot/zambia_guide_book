@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {BusinessDb, BusinessImagesDB} from '../../api/collections/collections.js';
+import {BusinessDb, BusinessImagesDB, ImagesDB} from '../../api/collections/collections.js';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import Navbar from '../HomePage/Navbar.jsx';
@@ -28,37 +28,46 @@ class UploadFile extends Component{
         e.preventDefault();
 
         const {target} = e;
+
+              
+        const LocationID = this.state.Location;
+        
+        const Provinces = this.state.Province;
+        //const User = Meteor.user()._id;
         
         if(target.Image.files && target.Image.files[0]){
             
             const imageUploader = target.Image.files[0];
 
-            let reader = new FileReader();
+            // let reader = new FileReader();
             
-            reader.onloadend = () => {
+            // reader.onloadend = () => {
 
-                this.setState({
-                    imagefile:imageUploader,
-                    imagePreviewURL: reader.result
+            //     this.setState({
+            //         imagefile:imageUploader,
+            //         imagePreviewURL: reader.result
     
-                })
+            //     })
                 
-            }
+            // }
 
-            reader.readAsDataURL(imageUploader);
+            // reader.readAsDataURL(imageUploader);
 
-            console.log(imageUploader);
+            // console.log(imageUploader);
 
             
 
 
 
             if (imageUploader){
-                let uploadInstance = BusinessImagesDB.insert({
+                let uploadInstance = ImagesDB.insert({
                     file: imageUploader,
                     meta: {
                       //locator: self.props.fileLocator,
-                      userId: Meteor.userId() // Optional, used to check on server for file tampering
+                      userId: Meteor.userId(), // Optional, used to check on server for file tampering
+                      provinces: Provinces,
+                      Location: LocationID
+
                     },
                     streams: 'dynamic',
                     chunkSize: 'dynamic',
@@ -68,21 +77,13 @@ class UploadFile extends Component{
                   uploadInstance.start();
             }
         }
-        const Business = this.state.BusinessName;
-        const PhoneOne = this.state.PhoneNumberOne;
-        const PhoneTwo = this.state.PhoneNumberTwo;
-        const EmailID = this.state.Email;
-        const LocationID = this.state.Location;
-        const Services = this.state.Service;
-        const Provinces = this.state.Province;
-        const User = Meteor.user()._id;
-
-        const NewBusiness = {
-            Business, PhoneOne, PhoneTwo, EmailID,
-            LocationID, Services, Provinces, User
-        }
-
-        Meteor.call('newBusiness', NewBusiness);
+        
+        target.Image.value = '';
+        target.Province.value='';
+        target.Location.value='';
+       
+        alert("Image Uploaded");
+     
 
     }
 
@@ -107,39 +108,44 @@ class UploadFile extends Component{
                 <div>
                     <Navbar/>
                     <h1>Upload</h1>
-                    <form action="" onSubmit = {this.handleSubmit}>
-                        <label htmlFor="">Upload an image</label>
-                        <input type="file" name="Image" onChange={this.handleInput}/><br/><br/>
-                        <label htmlFor="">Business Name</label>
-                        <input name="BusinessName" type="text" onChange={this.handleInput}/><br/><br/>
-                        <label htmlFor="">Phone Number 1</label>
-                        <input name="PhoneNumberOne" type="text" onChange={this.handleInput}/><br/><br/>
-                        <label htmlFor="">Phone Number 2</label>
-                        <input name="PhoneNumberTwo" type="text" onChange={this.handleInput}/><br/><br/>
-                        <label htmlFor="">Email</label>
-                        <input name="Email" type="text" onChange={this.handleInput}/><br/><br/>
-                        <label htmlFor="">Province</label>
-                        <select name="Province" id="" onChange={this.handleInput}>
-                            <option value="LUSAKA">Lusaka</option>
-                            <option value="CENTRAL">Central</option>
-                            <option value="COPPERBELT">Copperbelt</option>
-                            <option value="EASTERN">Eastern</option>
-                            <option value="NORTHERN">Northern</option>
-                            <option value="SOUTHERN">Southern</option>
-                            <option value="MUCHINGA">Muchinga</option>
-                            <option value="NORTHWESTERN">North Western</option>
-                            <option value="LUAPULA">Luapula</option>
-                            <option value="WESTERN">Western</option>
-                        </select>
-                        <br/><br/>
-                        <label htmlFor="">Location</label>
-                        <input name="Location" type="text" onChange={this.handleInput}/><br/><br/>
-                        <label htmlFor="">Service</label>
-                        <input name="Service" type="text" onChange={this.handleInput}/><br/><br/>
-                        
-                        <button type="submit">Enter Data</button>
-                    </form>
-                    {$imagePreview}
+                    <div className="card">
+                        <form action="" onSubmit = {this.handleSubmit} className="text-center">
+                            <div>                                
+                                <label htmlFor="">Upload an image</label>
+                                <input 
+                                    type="file" 
+                                    name="Image" 
+                                    onChange={this.handleInput}/><br/><br/>                                
+                            </div>
+                            <select name="Province" id="" onChange={this.handleInput} className="browser-default custom-select mb-4" required>
+                                <option value="">Select A Province</option>
+                                <option value="LUSAKA">Lusaka</option>
+                                <option value="CENTRAL">Central</option>
+                                <option value="COPPERBELT">Copperbelt</option>
+                                <option value="EASTERN">Eastern</option>
+                                <option value="NORTHERN">Northern</option>
+                                <option value="SOUTHERN">Southern</option>
+                                <option value="MUCHINGA">Muchinga</option>
+                                <option value="NORTHWESTERN">North Western</option>
+                                <option value="LUAPULA">Luapula</option>
+                                <option value="WESTERN">Western</option>
+                            </select><br/><br/>                                
+                           
+                            <div className="md-form">                                
+                                <input 
+                                    name="Location" 
+                                    type="text" 
+                                    onChange={this.handleInput} 
+                                    id="formLocation" 
+                                    className="form-control"
+                                    placeholder="LOCATION"/><br/><br/>
+                                
+                            </div>
+                            
+                            <button type="submit">Enter Data</button>
+                        </form>
+                    </div>
+                    
                     
                 </div>
             )
@@ -154,14 +160,14 @@ class UploadFile extends Component{
 }
 
 export default withTracker(()=>{
-    Meteor.subscribe('businessdb');
-    Meteor.subscribe('businessimagesdb');
+    
+    Meteor.subscribe('imagesdb');
     const filesHandle = Meteor.subscribe('files.all');
     const docsReadyYet = filesHandle.ready();
     const imageFiles = BusinessImagesDB.find({}).fetch();
     
     return{
-        businessdb : BusinessDb.find({}).fetch(),
+        imagesdb : ImagesDB.find({}).fetch(),
         docsReadyYet,
         imageFiles
     }

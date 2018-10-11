@@ -5,41 +5,51 @@ import { withTracker } from 'meteor/react-meteor-data';
 
 class Places extends Component{
 
+    goToBusiness = (e,businessid) =>{
+        Session.set("businessid",businessid);
+        FlowRouter.go('/MainBusinessPage');
+    }
+
     getPosts = () => {
         const businessdb = this.props.businessdb;
-
+        const businessimagesdb = this.props.businessimagesdb;
+        
         //console.log(resolutions)
         
         return businessdb.map((businessdb)=>{
+            const files = BusinessImagesDB.findOne({'meta.BusinessName':businessdb.Business}).link();
             return(
                 <div key = {businessdb._id}>
+                    <img src={files} alt={businessimagesdb.name}/>
+                    {/* {this.getImages(businessdb.Business)} */}
                     <h3>{businessdb.Business}</h3>
                     <h3>{businessdb.LocationID}</h3>
                     <h3>{businessdb.Provinces}</h3>
+                    <button onClick={e => this.goToBusiness(e,businessdb._id)}>Check it Out</button>
+                </div>
+            )
+        })
+    }
+
+    // getImages = (businessName) =>{
+        
+    //     const businessimagesdb = this.props.businessimagesdb;
+    //     //const MetaData = businessimagesdb.meta.BusinessName;
+        
+
+    //     //const link = BusinessImagesDB.find({}).link(); _id:'fFzvDd6e3DgFcbwaS'
+    //     return businessimagesdb.map((businessimagesdb)=>{
+    //         const files = BusinessImagesDB.findOne({_id:'9B7TNGPxZ86zDZigj'}).link();
+
+    //         return(
+    //             <div key ={businessimagesdb._id}>
+    //                 <img src={files} alt={businessimagesdb.name}/>
                     
-                </div>
-            )
-        })
-    }
+    //             </div>
+    //         )
+    //     })
 
-    getImages = () =>{
-        
-        const businessimagesdb = this.props.businessimagesdb;
-        
-
-        //const link = BusinessImagesDB.find({}).link();
-        return businessimagesdb.map((businessimagesdb)=>{
-            const files = BusinessImagesDB.findOne({_id:"hFDo2b6DAnqvhnNhK"}).link();
-
-            return(
-                <div key ={businessimagesdb._id}>
-                    <img src={files} alt={businessimagesdb.name}/>
-                    <h1>{businessimagesdb.name}</h1>
-                </div>
-            )
-        })
-
-    }
+    // }
 
 
     render(){
@@ -48,7 +58,7 @@ class Places extends Component{
                 <div>
                     <h1>Places</h1>
                     {this.getPosts()}
-                    {this.getImages()}
+                    
                 </div>
             )
         } else{

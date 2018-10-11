@@ -12,6 +12,7 @@ import UserPage from './AccountsPages/UserPage.jsx';
 import UploadBusiness from './UploadPage/UploadBusiness.jsx';
 import UploadPage from './UploadPage/UploadPlace.jsx';
 import UploadPlace from './UploadPage/UploadPlace.jsx';
+import SightPage from './SightProfilePage/SightPage.jsx';
 
 
 
@@ -71,6 +72,13 @@ open.route('/ReportFile',{
     name:'ReportFile',
     action:()=>{
         mount(ReportFile,{})
+    }
+});
+
+open.route('/SightPage',{
+    name:'sightpage',
+    action:()=>{
+        mount(SightPage,{})
     }
 });
 
