@@ -9,7 +9,7 @@ class Navbar extends Component{
                 <div>
 
                    <nav className="navbar navbar-expand-md navbar-light bg-light sticky-top">
-                        <div className= "container-fluid">
+                        <div className= "container-fluid navigation">
                             <a className= "navbar-brand" href="/"><img src="#" alt="LogoHere"/></a>
                             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
                                 <span className="navbar-toggler-icon"></span>

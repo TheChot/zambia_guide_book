@@ -285,13 +285,13 @@ class MainCityPage extends Component{
                 <div className = "container-fluid padding mainButtons">
                     <div className="row text-center padding">
                         <div className="col-xs-12 col-sm-6 col-md-4">
-                            <button onClick ={this.setPictures}>Pictures</button>
+                            <button className="button1" onClick ={this.setPictures}>Pictures</button>
                         </div>
                         <div className="col-xs-12 col-sm-6 col-md-4">
-                            <button onClick ={this.setHotRightNow}>Hot Right Now</button>
+                            <button className="button2" onClick ={this.setHotRightNow}>Hot Right Now</button>
                         </div>
                         <div className="col-xs-12 col-sm-6 col-md-4">
-                            <button onClick ={this.setPlaces}>Places</button>
+                            <button className="button3" onClick ={this.setPlaces}>Places</button>
                         </div>                        
                     </div>
                 </div>

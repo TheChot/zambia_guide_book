@@ -57,9 +57,25 @@ class MainBusinessPage extends Component{
             <div>
                 <Navbar/>
                 <h1>Business Page</h1>
-                <button onClick={this.setPictures}>Pictures</button>
-                <button onClick={this.setServices}>Services</button>
-                <button onClick={this.setAbout}>About</button>
+                <div className = "container-fluid padding mainButtons">
+                    <div className="row text-center padding">
+                        <div className="col-xs-12 col-sm-6 col-md-4">
+                            <button className="button1" onClick={this.setPictures}>Pictures</button>
+                        </div>
+                        <div className="col-xs-12 col-sm-6 col-md-4">
+                            <button className="button2" onClick={this.setServices}>Services</button>
+                        </div>
+                        <div className="col-xs-12 col-sm-6 col-md-4">
+                            <button className="button3" onClick={this.setAbout}>About</button>
+                        </div>
+                        
+                        
+                        
+                    </div>
+                </div>
+                
+                
+                
                 {this.setComponent()}
             </div>
         )

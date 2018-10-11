@@ -42,7 +42,7 @@ class HomePage extends Component{
         })
     }
 
-    setComponent = () =>{
+    setComponent = () =>{https://github.com/TheChot/zambia_guide_bohttps://github.com/TheChot/zambia_guide_book.githttps://github.com/TheChot/zambia_guide_book.gitok.git
 
         if (this.state.TrendingComp){
             return(<Trending/>);
@@ -62,13 +62,13 @@ class HomePage extends Component{
                 <div className = "container-fluid padding mainButtons">
                     <div className="row text-center padding">
                         <div className="col-xs-12 col-sm-6 col-md-4">
-                            <button onClick ={this.setTrending}>Trending</button>
+                            <button className="button1" onClick ={this.setTrending} >Trending</button>
                         </div>
                         <div className="col-xs-12 col-sm-6 col-md-4">
-                            <button onClick ={this.setWhatToDo}>What To Do</button>
+                            <button className="button2" onClick ={this.setWhatToDo}>What To Do</button>
                         </div>
                         <div className="col-xs-12 col-sm-6 col-md-4">
-                            <button onClick ={this.setFavPics}>Favourite Pictures</button>
+                            <button className="button3" onClick ={this.setFavPics}>Favourite Pictures</button>
                         </div>
                         
                         
