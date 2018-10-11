@@ -39,21 +39,21 @@ class UploadFile extends Component{
             
             const imageUploader = target.Image.files[0];
 
-            let reader = new FileReader();
+            // let reader = new FileReader();
             
-            reader.onloadend = () => {
+            // reader.onloadend = () => {
 
-                this.setState({
-                    imagefile:imageUploader,
-                    imagePreviewURL: reader.result
+            //     this.setState({
+            //         imagefile:imageUploader,
+            //         imagePreviewURL: reader.result
     
-                })
+            //     })
                 
-            }
+            // }
 
-            reader.readAsDataURL(imageUploader);
+            // reader.readAsDataURL(imageUploader);
 
-            console.log(imageUploader);
+            // console.log(imageUploader);
 
             
 
@@ -78,9 +78,11 @@ class UploadFile extends Component{
             }
         }
         
-
+        target.Image.value = '';
+        target.Province.value='';
+        target.Location.value='';
        
-
+        alert("Image Uploaded");
      
 
     }
@@ -143,7 +145,7 @@ class UploadFile extends Component{
                             <button type="submit">Enter Data</button>
                         </form>
                     </div>
-                    {$imagePreview}
+                    
                     
                 </div>
             )

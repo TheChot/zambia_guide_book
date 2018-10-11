@@ -88,6 +88,13 @@ class UploadPlace extends Component{
         }
         console.log(Meteor.user()._id);
         Meteor.call('newSite', NewSite);
+        
+        target.Image.value = '';
+        target.SiteName.value='';  
+        target.Email.value='';
+        target.Province.value='';
+        target.Location.value='';
+        target.AboutPlace.value='';
         alert("Attraction Uploaded");
 
     }

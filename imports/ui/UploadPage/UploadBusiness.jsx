@@ -92,6 +92,16 @@ class UploadBusiness extends Component{
         }
 
         Meteor.call('newBusiness', NewBusiness);
+        
+        target.Image.value = '';
+        target.BusinessName.value='';
+        target.PhoneNumberOne.value='';
+        target.PhoneNumberTwo.value='';
+        target.Email.value='';
+        target.Province.value='';
+        target.Location.value='';
+        target.Service.value='';
+
         alert("Business Uploaded");
 
     }
