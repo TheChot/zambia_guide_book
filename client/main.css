@@ -8,12 +8,13 @@ body {
 .navbar
 {
     padding: .8rem;
-    background-color: rgb(144, 238, 172);
+    /* background-color: rgb(144, 238, 172); */
+    color: white;
 }
-.navbar-nav li
+/* .navbar-nav li
 {
     padding-right: 20px;
-}
+} */
 /* .navigation {
 background-color: rgb(83, 76, 175);
 color: white;
@@ -62,7 +63,7 @@ color: white;
 background-color: rgb(100, 90, 0);
 }
 
-.loggedOutNav
+/* .loggedOutNav
 {
   
   margin-left: 60%;
@@ -70,7 +71,7 @@ background-color: rgb(100, 90, 0);
 .loggedInNav
 {
   margin-left: 40%;
-}
+} */
 nav{
   background-color: rgb(144, 238, 172);
 }
@@ -114,4 +115,12 @@ nav{
 {
   width: 1280px;
   height: 750px;
+}
+
+.nav-item
+{
+  /* padding-right: 20px; */
+  margin: 20px;
+  /* padding: 20px; */
+  color: white;
 }
