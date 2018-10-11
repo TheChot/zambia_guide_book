@@ -8,7 +8,7 @@ class Navbar extends Component{
             return (
                 <div>
 
-                   <nav className="navbar navbar-expand-md navbar-light bg-light sticky-top">
+                   <nav className="navbar navbar-expand-md navbar-light bg-success">
                         <div className= "container-fluid navigation">
                             <a className= "navbar-brand" href="/"><img src="#" alt="LogoHere"/></a>
                             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
@@ -37,7 +37,7 @@ class Navbar extends Component{
         } else{
             return(
                 <div>
-                    <nav className="navbar navbar-expand-md navbar-light bg-light sticky-top">
+                    <nav className="navbar navbar-expand-md navbar-light bg-green">
                         <div className= "container-fluid">
                             <a className= "navbar-brand" href="/"><img src="#" alt="LogoHere"/></a>
                             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">

@@ -1,6 +1,7 @@
 accounts-base@1.4.2
 accounts-password@1.5.1
 aldeed:simple-schema@1.5.4
+alexwine:bootstrap-4@4.1.0
 allow-deny@1.1.0
 autopublish@1.0.7
 autoupdate@1.4.1

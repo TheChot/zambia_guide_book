@@ -1,4 +1,5 @@
 body {
+  background-color: rgb(144, 238, 172);
   padding: 10px;
   font-family: sans-serif;
   background-color: rgb(144, 238, 172);
@@ -7,15 +8,16 @@ body {
 .navbar
 {
     padding: .8rem;
+    background-color: rgb(144, 238, 172);
 }
 .navbar-nav li
 {
     padding-right: 20px;
 }
-.navigation {
+/* .navigation {
 background-color: rgb(83, 76, 175);
 color: white;
-}
+} */
 
 .button1 {
   background-color: rgb(76, 175, 92); /* Green */
@@ -69,7 +71,9 @@ background-color: rgb(100, 90, 0);
 {
   margin-left: 40%;
 }
-
+nav{
+  background-color: rgb(144, 238, 172);
+}
 
 /* Firefox Fix */
 .carousel-item
@@ -80,6 +84,10 @@ background-color: rgb(100, 90, 0);
     --webkit-backface-visibility: visible;
     backface-visibility: visible;
 }
+/* div
+{
+  background-color: rgb(144, 238, 172);
+} */
 
 .provinceChooser
 {

@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 //import Zambia from './';
+//import '../../../public/bootstrap/bootstrap.css';
+//import { bootstrap } from "bootstrap";
 
 class Map extends Component{
 
