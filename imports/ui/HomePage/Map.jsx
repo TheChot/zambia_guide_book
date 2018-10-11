@@ -20,6 +20,10 @@ class Map extends Component{
                     <div className="carousel-inner">
                         <div className="carousel-item active">
                             <img className="d-block w-100" src="CarouselImages/Carousel.jpg" alt="First slide"/>
+                            <div className="carousel-caption">
+                                <h1 className="display-2">Zambia Guide Book</h1>
+                                <h3>Let Us Guide You Through Zambia</h3>
+                            </div>
                         </div>
                         <div className="carousel-item">
                             <img className="d-block w-100" src="CarouselImages/Carousel5.jpg" alt="First slide"/>

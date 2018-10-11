@@ -39,7 +39,7 @@ class Navbar extends Component{
         } else{
             return(
                 <div>
-                    <nav className="navbar navbar-expand-md navbar-light bg-green">
+                    <nav className="navbar navbar-expand-md navbar-light">
                         <div className= "container-fluid">
                             <a className= "navbar-brand" href="/"><img src="#" alt="LogoHere"/></a>
                             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
