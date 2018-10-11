@@ -4,7 +4,7 @@ class CityPictures extends Component{
 
     render(){
         return(
-            <div>
+            <div className="container-fluid pageContent">
                 <h1>City Pictures</h1>
                 
             </div>

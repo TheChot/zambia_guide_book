@@ -44,7 +44,7 @@ class FavouritePictures extends Component{
     render(){
         //if(this.props.isDataReady){
             return(
-                <div>
+                <div className="container-fluid pageContent">
                     <h1>Favourite Pictures</h1>
                     {this.getPictures()}
                 </div>

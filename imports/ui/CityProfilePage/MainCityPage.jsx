@@ -109,15 +109,15 @@ class MainCityPage extends Component{
 
             case "LUSAKA":
                 return(
-                    <div className="row padding"> 
+                    <div className="row padding cityTitle"> 
                         
                         <div className="col-md-12 col-lg-6">
-                            <h1>Lusaka</h1>
+                            <h1>Lusaka Province</h1>
                             <h1>Lusaka</h1>
                             <h2>{this.state.weatherDescription}</h2>
                         </div> 
                         <div className = "col-lg-6">
-                            <img src="CarouselImages/mapofZambia.jpg" alt=""/>
+                            <img className="img-fluid" src="CarouselImages/mapofZambia.jpg" alt=""/>
                         </div>                      
                         
                     </div>
@@ -125,15 +125,15 @@ class MainCityPage extends Component{
                 break;
             case "WESTERN":
                 return(
-                    <div className="row padding"> 
+                    <div className="row padding cityTitle"> 
                        
                         <div className="col-md-12 col-lg-6">
-                            <h1>Western</h1>
+                            <h1>Western Province</h1>
                             <h1>Mongu</h1>
                             <h2>{this.state.weatherDescription}</h2>
                         </div>  
                         <div className = "col-lg-6">
-                            <img src="CarouselImages/mapofZambia.jpg" alt=""/>
+                            <img className="img-fluid" src="CarouselImages/mapofZambia.jpg" alt=""/>
                         </div>                     
                     
                     </div>
@@ -141,15 +141,15 @@ class MainCityPage extends Component{
                 break;
             case "SOUTHERN":
                 return(
-                    <div className="row padding"> 
+                    <div className="row padding cityTitle"> 
                        
                         <div className="col-md-12 col-lg-6">
-                            <h1>Southern</h1>
+                            <h1>Southern Province</h1>
                             <h1>Livingstone</h1>
                             <h2>{this.state.weatherDescription}</h2>
                         </div>
                         <div className = "col-lg-6">
-                            <img src="CarouselImages/mapofZambia.jpg" alt=""/>
+                            <img className="img-fluid" src="CarouselImages/mapofZambia.jpg" alt=""/>
                         </div>                       
                     
                     </div>
@@ -157,75 +157,75 @@ class MainCityPage extends Component{
                 break;
             case "CENTRALPROVINCE":
                 return(
-                    <div className="row padding"> 
+                    <div className="row padding cityTitle"> 
                        
                         <div className="col-md-12 col-lg-6">
-                            <h1>Central</h1>
+                            <h1>Central Province</h1>
                             <h1>Kabwe</h1>
                             <h2>{this.state.weatherDescription}</h2>
                         </div>                       
                         <div className = "col-lg-6">
-                             <img src="CarouselImages/mapofZambia.jpg" alt=""/>
+                             <img className="img-fluid" src="CarouselImages/mapofZambia.jpg" alt=""/>
                         </div>
                     </div>
                 );
                 break;
             case "COPPERBELT":
                 return(
-                    <div className="row padding"> 
+                    <div className="row padding cityTitle"> 
                    
                         <div className="col-md-12 col-lg-6">
-                            <h1>Copperbelt</h1>
+                            <h1>Copperbelt Province</h1>
                             <h1>Ndola</h1>
                             <h2>{this.state.weatherDescription}</h2>
                         </div>                       
                         <div className = "col-lg-6">
-                            <img src="CarouselImages/mapofZambia.jpg" alt=""/>
+                            <img className="img-fluid" src="CarouselImages/mapofZambia.jpg" alt=""/>
                         </div>
                     </div>
                 );
                 break;
             case "EASTERN":
                 return(
-                    <div className="row padding"> 
+                    <div className="row padding cityTitle"> 
                     
                     <div className="col-md-12 col-lg-6">
-                        <h1>Eastern</h1>
+                        <h1>Eastern Province</h1>
                         <h1>Chipata</h1>
                         <h2>{this.state.weatherDescription}</h2>
                     </div>                       
                     <div className = "col-lg-6">
-                        <img src="CarouselImages/mapofZambia.jpg" alt=""/>
+                        <img className="img-fluid" src="CarouselImages/mapofZambia.jpg" alt=""/>
                     </div>
                 </div>
                 );
                 break;
             case "LUAPULA":
                 return(
-                    <div className="row padding"> 
+                    <div className="row padding cityTitle"> 
                         
                         <div className="col-md-12 col-lg-6">
-                            <h1>Luapula</h1>
+                            <h1>Luapula Province</h1>
                             <h1>Mansa</h1>
                             <h2>{this.state.weatherDescription}</h2>
                         </div>                       
                         <div className = "col-lg-6">
-                            <img src="CarouselImages/mapofZambia.jpg" alt=""/>
+                            <img className="img-fluid" src="CarouselImages/mapofZambia.jpg" alt=""/>
                         </div>
                     </div>
                 );
                 break;
             case "NORTHWESTERN":
                 return(
-                    <div className="row padding"> 
+                    <div className="row padding cityTitle"> 
                         
                         <div className="col-md-12 col-lg-6">
-                            <h1>North Western</h1>
+                            <h1>North Western Province</h1>
                             <h1>Solwezi</h1>
                             <h2>{this.state.weatherDescription}</h2>
                         </div> 
                         <div className ="col-lg-6">
-                            <img src="CarouselImages/mapofZambia.jpg" alt=""/>
+                            <img className="img-fluid" src="CarouselImages/mapofZambia.jpg" alt=""/>
                         </div>                     
                     
                     </div>
@@ -233,15 +233,15 @@ class MainCityPage extends Component{
                 break;
             case "NORTHERN":
                 return(
-                    <div className="row padding"> 
+                    <div className="row padding cityTitle"> 
                        
                         <div className="col-md-12 col-lg-6">
-                            <h1>Northern</h1>
+                            <h1>Northern Province</h1>
                             <h1>Kasama</h1>
                             <h2>{this.state.weatherDescription}</h2>
                         </div> 
                         <div className ="col-lg-6">
-                            <img src="CarouselImages/mapofZambia.jpg" alt=""/>
+                            <img className="img-fluid" src="CarouselImages/mapofZambia.jpg" alt=""/>
                         </div>                      
                     
                     </div>
@@ -249,15 +249,15 @@ class MainCityPage extends Component{
                 break;
             case "MUCHINGA":
                 return(
-                    <div className="row padding"> 
+                    <div className="row padding cityTitle"> 
                        
                         <div className="col-md-12 col-lg-6" >
-                            <h1>Muchinga</h1>
+                            <h1>Muchinga Province</h1>
                             <h1>Chinsali</h1>
                             <h2>{this.state.weatherDescription}</h2>
                         </div>
                         <div className ="col-lg-6">
-                            <img src="CarouselImages/mapofZambia.jpg" alt=""/>
+                            <img className="img-fluid" src="CarouselImages/mapofZambia.jpg" alt=""/>
                         </div>                       
                     
                     </div>
@@ -288,7 +288,7 @@ class MainCityPage extends Component{
                             <button className="button1" onClick ={this.setPictures}>Pictures</button>
                         </div>
                         <div className="col-xs-12 col-sm-6 col-md-4">
-                            <button className="button2" onClick ={this.setHotRightNow}>Hot Right Now</button>
+                            <button className="button2" onClick ={this.setHotRightNow}>Attractions</button>
                         </div>
                         <div className="col-xs-12 col-sm-6 col-md-4">
                             <button className="button3" onClick ={this.setPlaces}>Places</button>

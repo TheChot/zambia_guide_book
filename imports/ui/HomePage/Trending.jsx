@@ -4,7 +4,7 @@ class Trending extends Component{
 
     render(){
         return(
-            <div>
+            <div className="container-fluid pageContent">
                 <h1>Trending</h1>
                 
             </div>

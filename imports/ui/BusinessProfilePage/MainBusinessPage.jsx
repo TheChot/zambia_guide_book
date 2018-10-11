@@ -66,13 +66,21 @@ class MainBusinessPage extends Component{
         return businessdb.map((businessdb)=>{
             const files = BusinessImagesDB.findOne({'meta.BusinessName':businessdb.Business}).link();
             return(
-                <div key = {businessdb._id}>
-                    <img src={files} alt={businessimagesdb.name}/>
-                    {/* {this.getImages(businessdb.Business)} */}
-                    <h3>{businessdb.Business}</h3>
-                    <h3>{businessdb.LocationID}</h3>
-                    <h3>{businessdb.Provinces}</h3>
-                    
+                <div key = {businessdb._id} >
+                    <div className="row padding">                    
+                        <div className="col-md-12 col-lg-6">
+                            <h1>{businessdb.Business}</h1>                        
+                            <h1>{businessdb.Provinces}</h1>
+                            <h3>{businessdb.LocationID}</h3>
+                        </div>
+                        <div className="col-lg-6">
+                            <img className="img-thumbnail rounded float-right" src={files} alt={businessimagesdb.name}/>
+                        </div>                        
+                        {/* {this.getImages(businessdb.Business)} */}                        
+                    </div> 
+                    <div>
+                        <p>{businessdb.Services}</p>
+                    </div>   
                 </div>
             )
         })
@@ -83,10 +91,10 @@ class MainBusinessPage extends Component{
         // const businessdb = this.props.businessdb;
 
         return(
-            <div >
+            <div>
                 <Navbar/>
                 <h1>Business Page</h1>
-                <div>
+                <div className="container-fluid infoPage">
                     {this.getPosts()}
                 </div>
                 {/* <button onClick={this.setPictures}>Pictures</button>

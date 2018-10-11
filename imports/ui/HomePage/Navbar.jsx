@@ -41,7 +41,7 @@ class Navbar extends Component{
                 <div>
                     <nav className="navbar navbar-expand-md navbar-light">
                         <div className= "container-fluid">
-                            <a className= "navbar-brand" href="/"><img src="#" alt="LogoHere"/></a>
+                            <a className= "navbar-brand" href="/"><img className="img-fluid logo" src="logo/bird.png" alt="LogoHere"/></a>
                             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
                                 <span className="navbar-toggler-icon"></span>
                             </button>

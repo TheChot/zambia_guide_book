@@ -15,12 +15,23 @@ class SightPage extends Component{
             const files = BusinessImagesDB.findOne({'meta.BusinessName':sitesdb.Site}).link();
             return(
                 <div key = {sitesdb._id}>
-                    <img src={files} alt={sitesdb.Site}/>
+                    <div className="row padding">
+                        <div className="col-md-12 col-lg-6">
+                            <h3>{sitesdb.Site}</h3>
+                            <h3>{sitesdb.LocationID}</h3>
+                            <h3>{sitesdb.Provinces}</h3>
+                            
+                        </div>
+                        <div className="col-lg-6">
+                            <img className="img-thumbnail rounded float-right" src={files} alt={sitesdb.Site}/>   
+                        </div>
+                        
+                    </div>
+                    <div>
+                        <p>{sitesdb.About}</p>
+                    </div>
                     {/* {this.getImages(businessdb.Business)}*/}
-                    <h3>{sitesdb.Site}</h3>
-                    <h3>{sitesdb.LocationID}</h3>
-                    <h3>{sitesdb.Provinces}</h3>
-                    <p>{sitesdb.About}</p>
+                    
                     
                 </div>
             )
@@ -31,7 +42,10 @@ class SightPage extends Component{
         return(
             <div>
                 <h1>Sight Page</h1>
-                {this.getPosts()}
+                <div className="container-fluid infoPage">
+                    {this.getPosts()}
+                </div>
+                
             </div>
         )
     }

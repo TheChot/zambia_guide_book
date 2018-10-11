@@ -55,7 +55,7 @@ class Places extends Component{
     render(){
         if(this.props.isDataReady){
             return(
-                <div>
+                <div  className="container-fluid pageContent">
                     <h1>Places</h1>
                     {this.getPosts()}
                     

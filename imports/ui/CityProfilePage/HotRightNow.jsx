@@ -34,7 +34,7 @@ class HotRightNow extends Component{
 
     render(){
         return(
-            <div>
+            <div  className="container-fluid pageContent">
                 <h1>Attractions</h1>
                 {this.getPosts()}
             </div>
