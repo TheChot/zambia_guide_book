@@ -57,54 +57,54 @@ class Map extends Component{
                     <div className="row text-center padding provinceChooser">
                         
                         <div className="col-sm provinceButton">
-                            <button className="btn btn-success btn-rounded " onClick={e => this.setCity(e,'LUSAKA')}>
+                            <button className="btn btn-success btn-rounded btn-lg" onClick={e => this.setCity(e,'LUSAKA')}>
                                 Lusaka
                             </button>
                             
 
                         </div>
                         <div className="col-sm provinceButton">
-                            <button className="btn btn-success btn-rounded " onClick={e => this.setCity(e,'CENTRAL')}>
+                            <button className="btn btn-success btn-rounded btn-lg" onClick={e => this.setCity(e,'CENTRAL')}>
                                 Central
                             </button>
                         </div>
                         <div className="col-sm provinceButton">
-                            <button className="btn btn-success btn-rounded " onClick={e => this.setCity(e,'COPPERBELT')}>
+                            <button className="btn btn-success btn-rounded btn-lg" onClick={e => this.setCity(e,'COPPERBELT')}>
                                 Copperbelt
                             </button>
                         </div>
                         <div className="col-sm provinceButton">
-                            <button className="btn btn-success btn-rounded " onClick={e => this.setCity(e, 'SOUTHERN')}>
+                            <button className="btn btn-success btn-rounded btn-lg" onClick={e => this.setCity(e, 'SOUTHERN')}>
                                 Southern
                             </button>
                         </div>
                         <div className="col-sm provinceButton">
-                            <button className="btn btn-success btn-rounded " onClick={e => this.setCity(e,'EASTERN')}>
+                            <button className="btn btn-success btn-rounded btn-lg" onClick={e => this.setCity(e,'EASTERN')}>
                                 Eastern
                             </button>
                         </div>
                         <div className="col-sm provinceButton">
-                            <button className="btn btn-success btn-rounded " onClick={e => this.setCity(e, 'NORTHWESTERN')}>
+                            <button className="btn btn-success btn-rounded btn-lg" onClick={e => this.setCity(e, 'NORTHWESTERN')}>
                                 North-Western
                             </button>
                         </div>
                         <div className="col-sm provinceButton">
-                            <button className="btn btn-success btn-rounded " onClick={e => this.setCity(e,'NORTHERN')}>
+                            <button className="btn btn-success btn-rounded btn-lg" onClick={e => this.setCity(e,'NORTHERN')}>
                                 Northern
                             </button>
                         </div>
                         <div className="col-sm provinceButton">
-                            <button className="btn btn-success btn-rounded " onClick={e => this.setCity(e,'LUAPULA')}>
+                            <button className="btn btn-success btn-rounded btn-lg" onClick={e => this.setCity(e,'LUAPULA')}>
                                 Luapula
                             </button>
                         </div>
                         <div className="col-sm provinceButton">
-                            <button className="btn btn-success btn-rounded " onClick={e => this.setCity(e,'WESTERN')}>
+                            <button className="btn btn-success btn-rounded btn-lg" onClick={e => this.setCity(e,'WESTERN')}>
                                 Western
                             </button>
                         </div>
                         <div className="col-sm provinceButton">
-                            <button className="btn btn-success btn-rounded " onClick={e => this.setCity(e, 'MUCHINGA')}>
+                            <button className="btn btn-success btn-rounded btn-lg" onClick={e => this.setCity(e, 'MUCHINGA')}>
                                 Muchinga
                             </button>
                         </div>

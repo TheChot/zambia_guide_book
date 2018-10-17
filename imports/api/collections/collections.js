@@ -19,6 +19,11 @@ SitesDB.attachBehaviour('timestampable',{
 
 const ImagesDB = new FilesCollection({collectionName:'imagesdb', storagePath:'Uploads/ImagesDB'});
 
+// ImagesDB.attachBehaviour('timestampable',{
+//     createdAt:'insertedAt',
+//     updatedAt: 'modifiedAt'
+// });
+
 export {BusinessDb};
 export {BusinessImagesDB};
 export {SitesDB};

@@ -14,6 +14,9 @@ class MainCityPage extends Component{
             HotRightNowComp: false,
             PlacesComp:false,
             weatherDescription:'Description',
+            CityButton:'active btn btn-success btn-rounded btn-lg',
+            AttractionsButton:'btn btn-success btn-rounded btn-lg',
+            LocationsButton:'btn btn-success btn-rounded btn-lg'
             
         }
     }
@@ -22,7 +25,10 @@ class MainCityPage extends Component{
         this.setState({
             CityPicturesComp:true,
             HotRightNowComp: false,
-            PlacesComp:false
+            PlacesComp:false,
+            CityButton:'active btn btn-success btn-rounded btn-lg',
+            AttractionsButton:'btn btn-success btn-rounded btn-lg',
+            LocationsButton:'btn btn-success btn-rounded btn-lg'
         });
     }
 
@@ -30,7 +36,10 @@ class MainCityPage extends Component{
         this.setState({
             CityPicturesComp:false,
             HotRightNowComp: true,
-            PlacesComp:false
+            PlacesComp:false,
+            CityButton:'btn btn-success btn-rounded btn-lg',
+            AttractionsButton:'active btn btn-success btn-rounded btn-lg',
+            LocationsButton:'btn btn-success btn-rounded btn-lg'
         })
     }
 
@@ -38,7 +47,10 @@ class MainCityPage extends Component{
         this.setState({
             CityPicturesComp:false,
             HotRightNowComp: false,
-            PlacesComp:true
+            PlacesComp:true,
+            CityButton:'btn btn-success btn-rounded btn-lg',
+            AttractionsButton:'btn btn-success btn-rounded btn-lg',
+            LocationsButton:'active btn btn-success btn-rounded btn-lg'
         })
     }
     getWeather = () =>{
@@ -285,13 +297,13 @@ class MainCityPage extends Component{
                 <div className = "container-fluid padding mainButtons">
                     <div className="row text-center padding">
                         <div className="col-xs-12 col-sm-6 col-md-4">
-                            <button className="btn btn-success btn-rounded " onClick ={this.setPictures}>Pictures</button>
+                            <button className={this.state.CityButton} onClick ={this.setPictures}>Pictures</button>
                         </div>
                         <div className="col-xs-12 col-sm-6 col-md-4">
-                            <button className="btn btn-success btn-rounded " onClick ={this.setHotRightNow}>Attractions</button>
+                            <button className={this.state.AttractionsButton} onClick ={this.setHotRightNow}>Attractions</button>
                         </div>
                         <div className="col-xs-12 col-sm-6 col-md-4">
-                            <button className="btn btn-success btn-rounded " onClick ={this.setPlaces}>Places</button>
+                            <button className={this.state.LocationsButton} onClick ={this.setPlaces}>Places</button>
                         </div>                        
                     </div>
                 </div>
