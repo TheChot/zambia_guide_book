@@ -155,7 +155,7 @@ class MainCityPage extends Component{
                     </div>
                 );
                 break;
-            case "CENTRALPROVINCE":
+            case "CENTRAL":
                 return(
                     <div className="row padding cityTitle"> 
                        
@@ -285,13 +285,13 @@ class MainCityPage extends Component{
                 <div className = "container-fluid padding mainButtons">
                     <div className="row text-center padding">
                         <div className="col-xs-12 col-sm-6 col-md-4">
-                            <button className="button1" onClick ={this.setPictures}>Pictures</button>
+                            <button className="btn btn-success btn-rounded " onClick ={this.setPictures}>Pictures</button>
                         </div>
                         <div className="col-xs-12 col-sm-6 col-md-4">
-                            <button className="button2" onClick ={this.setHotRightNow}>Attractions</button>
+                            <button className="btn btn-success btn-rounded " onClick ={this.setHotRightNow}>Attractions</button>
                         </div>
                         <div className="col-xs-12 col-sm-6 col-md-4">
-                            <button className="button3" onClick ={this.setPlaces}>Places</button>
+                            <button className="btn btn-success btn-rounded " onClick ={this.setPlaces}>Places</button>
                         </div>                        
                     </div>
                 </div>

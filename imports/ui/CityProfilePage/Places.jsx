@@ -88,7 +88,7 @@ export default withTracker(()=>{
     const province = Session.get('City');
     let isDataReady = Meteor.subscribe('files.all');
     return{
-        businessdb : BusinessDb.find({Provinces:province}).fetch(),
+        businessdb : BusinessDb.find({Provinces:province},{sort:{insertedAt:-1}}).fetch(),
         businessimagesdb : BusinessImagesDB.find({}).fetch(),     
         
         isDataReady: isDataReady.ready(),

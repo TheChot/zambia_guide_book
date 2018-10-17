@@ -47,39 +47,42 @@ class UserPage extends Component{
                 <Navbar/>
                 {/* {this.setUser()} */}
                 
-                <div className="container-fluid padding">
+                <div className="container-fluid padding infoPage">
                     <div className ="row padding">
                         
                         <div className="col-md-12 col-lg-6">
                             {this.displayUser()}
-                            <button onClick={this.logoutUser}>Logout</button>
+                            {/* <button onClick={this.logoutUser}>Logout</button> */}
                         </div>
                         <div className ="col-lg-6">
-                            <img src="CarouselImages/mapofZambia.jpg" alt=""/>
+                            <img src="img_191958.png" alt="" className="img-thumbnail imgCard float-right"/>
                         </div>
                        
                     </div>
-                </div> 
+                </div>
+                <br/>
+                <br/>
                 <div className="container-fluid padding">
                     <div className ="row padding">
                         
                         <div className="col-md-12 col-lg-6">
                             <MyBusiness/>
-                        </div>
-                        <div className ="col-lg-6">
+                        </div><br/><br/>
+                        <div className ="col-md-12 col-lg-6">
                             <MyPlaces/> 
                         </div>
                        
                     </div>
-                </div>              
+                </div> <br/><br/>             
                 
-                <div className="container-fluid padding">
+                <div className="container-fluid padding infoPage">
                     <div className ="row padding">
                         <div className="col-md-12 col-lg-6">
-                            <a href="/UploadPlace"><h1>Add a Place</h1></a>
+                            <a href="/UploadBusiness" className="profileLink"><h1>Add a Location</h1></a>
+                            
                         </div>
                         <div className="col-md-12 col-lg-6">
-                            <a href="/UploadBusiness"><h1>Add a Business</h1></a>
+                            <a href="/UploadPlace" className="profileLink"><h1>Add an Attraction</h1></a>
                         </div>
                     </div>
                 </div>

@@ -71,7 +71,7 @@ class Navbar extends Component{
                                         <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                                             <a className="dropdown-item" href="/UploadFile">Upload A Picture</a>
                                             <div className="dropdown-divider"></div>
-                                            <a className="dropdown-item" href="/UploadBusiness">Add a Business</a>
+                                            <a className="dropdown-item" href="/UploadBusiness">Add a Location</a>
                                             <div className="dropdown-divider"></div>
                                             <a className="dropdown-item" href="/UploadPlace">Add an Attraction</a>
                                         </div>

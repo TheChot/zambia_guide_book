@@ -64,7 +64,7 @@ class Map extends Component{
 
                         </div>
                         <div className="col-sm provinceButton">
-                            <button className="btn btn-success btn-rounded " onClick={e => this.setCity(e,'CENTRALPROVINCE')}>
+                            <button className="btn btn-success btn-rounded " onClick={e => this.setCity(e,'CENTRAL')}>
                                 Central
                             </button>
                         </div>
