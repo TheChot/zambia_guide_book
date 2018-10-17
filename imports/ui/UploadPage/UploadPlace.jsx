@@ -88,6 +88,7 @@ class UploadPlace extends Component{
         }
         console.log(Meteor.user()._id);
         Meteor.call('newSite', NewSite);
+        alert("Attraction Uploaded");
         
         target.Image.value = '';
         target.SiteName.value='';  
@@ -95,7 +96,7 @@ class UploadPlace extends Component{
         target.Province.value='';
         target.Location.value='';
         target.AboutPlace.value='';
-        alert("Attraction Uploaded");
+        
 
     }
 
@@ -119,8 +120,8 @@ class UploadPlace extends Component{
             return(
                 <div>
                     <Navbar/>
-                    <h1>Upload</h1>
-                    <div className="card">
+                    <h1>Add an Attraction</h1>
+                    <div>
                         <form action="" onSubmit = {this.handleSubmit} className="text-center">
                             <div>                                
                                 <label htmlFor="">Upload an image</label>
@@ -178,7 +179,7 @@ class UploadPlace extends Component{
                                     onChange={this.handleInput}></textarea><br/><br/>
                             </div>
                             <button 
-                                className ="btn btn-info my-4 btn-block" 
+                                className ="btn btn-success btn-block" 
                                 type="submit">
                                     Enter Data
                             </button>

@@ -21,12 +21,23 @@ class HotRightNow extends Component{
             const files = BusinessImagesDB.findOne({'meta.BusinessName':sitesdb.Site}).link();
             return(
                 <div key = {sitesdb._id}>
-                    <img src={files} alt={sitesdb.Site}/>
+                    <div className="row padding placesCard shadow p-3 mb-5 bg-white rounded">
+                        <div className="col-md-12 col-lg-6">
+                            <h3>{sitesdb.Site}</h3>
+                            <h3>{sitesdb.LocationID}</h3>
+                            <h3>{sitesdb.Provinces}</h3>
+                        </div>
+                        <div className="col-lg-6 ">
+                            <img src={files} alt={sitesdb.Site} className="imgCard img-responsive rounded thumbnail float-right"/>
+                            
+                        </div>
+                        <div className="float-left">
+                            <button className="btn btn-success" onClick={e => this.goToBusiness(e,sitesdb._id)}>Check it Out</button>
+                        </div>
+                    </div>                    
                     {/* {this.getImages(businessdb.Business)} */}
-                    <h3>{sitesdb.Site}</h3>
-                    <h3>{sitesdb.LocationID}</h3>
-                    <h3>{sitesdb.Provinces}</h3>
-                    <button onClick={e => this.goToBusiness(e,sitesdb._id)}>Check it Out</button>
+
+                    
                 </div>
             )
         })

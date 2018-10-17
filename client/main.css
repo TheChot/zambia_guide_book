@@ -168,7 +168,7 @@ nav{
 .pageContent
 {
   background-color: white;
-  padding: 40px;
+  padding: 100px;
   border-radius: 10px;
 }
 
@@ -182,4 +182,17 @@ nav{
   background-color: white;
   padding: 40px;
   border-radius: 10px;
+}
+
+.placesCard
+{
+  height: 300px;
+  /* box-shadow: 5px 10px #000 */
+}
+.imgCard
+{
+  /* height: 200px;
+  width: 200px; */
+  max-height: 200px;
+  max-width: 200px;
 }

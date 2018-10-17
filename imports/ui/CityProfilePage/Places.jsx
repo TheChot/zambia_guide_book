@@ -20,12 +20,21 @@ class Places extends Component{
             const files = BusinessImagesDB.findOne({'meta.BusinessName':businessdb.Business}).link();
             return(
                 <div key = {businessdb._id}>
-                    <img src={files} alt={businessimagesdb.name}/>
-                    {/* {this.getImages(businessdb.Business)} */}
-                    <h3>{businessdb.Business}</h3>
-                    <h3>{businessdb.LocationID}</h3>
-                    <h3>{businessdb.Provinces}</h3>
-                    <button onClick={e => this.goToBusiness(e,businessdb._id)}>Check it Out</button>
+                    <div className="row padding placesCard shadow p-3 mb-5 bg-white rounded">
+                        <div className="col-md-12 col-lg-6">
+                            <h3>{businessdb.Business}</h3>
+                            <h3>{businessdb.LocationID}</h3>
+                            <h3>{businessdb.Provinces}</h3>
+                        </div>
+                        <div className="col-lg-6">
+                            <img src={files} alt={businessimagesdb.name} className=" imgCard img-responsive rounded thumbnail float-right"/>
+                        </div>
+                        <div className="float-left">
+                            <button className="btn btn-success" onClick={e => this.goToBusiness(e,businessdb._id)}>Check it Out</button>
+                        </div>
+                    </div>                    
+                    {/* {this.getImages(businessdb.Business)} */}                    
+                    
                 </div>
             )
         })

@@ -72,14 +72,19 @@ class MainBusinessPage extends Component{
                             <h1>{businessdb.Business}</h1>                        
                             <h1>{businessdb.Provinces}</h1>
                             <h3>{businessdb.LocationID}</h3>
+                            <h3>{businessdb.Services}</h3>
                         </div>
                         <div className="col-lg-6">
                             <img className="img-thumbnail rounded float-right" src={files} alt={businessimagesdb.name}/>
                         </div>                        
                         {/* {this.getImages(businessdb.Business)} */}                        
-                    </div> 
+                    </div>
+                    <br/>
+                    <br/>
+                    <br/> 
                     <div>
-                        <p>{businessdb.Services}</p>
+                        <h1>About</h1>
+                        <p>{businessdb.about}</p>
                     </div>   
                 </div>
             )

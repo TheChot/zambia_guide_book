@@ -10,16 +10,19 @@ class SignUp extends Component{
 
         e.preventDefault()
         const {target} = e;
-        const name = target.name.value
-        const password= target.password.value
+        const name = target.name.value;
+        const password = target.passwordfield.value;
         const confirmPassword = target.confirmpassword.value;
-        const email= target.email.value
+        const email= target.email.value;
         const firstName = target.firstName.value;
         const lastName = target.lastName.value;
 
            
         if(password != confirmPassword){
+            console.log(confirmPassword);
+            console.log(password);
             alert("Passwords Do Not Match");
+            
         } else{        
             const profile = {
                 email,
@@ -82,7 +85,7 @@ class SignUp extends Component{
                         <div className="md-form">
                             <input 
                                 type="password" 
-                                name="password" 
+                                name="passwordfield" 
                                 id="password"
                                 className="form-control" 
                                 placeholder="Password"

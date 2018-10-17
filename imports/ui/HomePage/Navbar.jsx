@@ -2,16 +2,28 @@ import React, {Component} from 'react'
 
 class Navbar extends Component{
 
+    logoutUser = (e) => {
+        e.preventDefault();
+
+        Meteor.logout((err)=>{
+            if(err){
+                console.log(err.reason);
+            } else{
+                FlowRouter.go('/Login')
+            }
+        })
+    }
+
     renderNav = () =>{
 
         if(!(Meteor.loggingIn() || Meteor.userId())){
             return (
                 <div>
 
-                   <nav className="navbar navbar-expand-md navbar-light bg-success">
+                   <nav className="navbar navbar-expand-md navbar-light">
                         <div className= "container-fluid navigation">
                             <a className= "navbar-brand" href="/">
-                                <img src="logo/bird.png" alt=""/>
+                                <img className="img-fluid logo" src="logo/bird.png" alt="LogoHere"/>
                             </a>
                             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
                                 <span className="navbar-toggler-icon"></span>
@@ -19,16 +31,16 @@ class Navbar extends Component{
                             <div className="collapse navbar-collapse" id="navbarResponsive">
                                 <ul className="navbar-nav loggedOutNav">
                                     <li className="nav-item">
-                                        <a href="/">Home</a>
+                                        <a className="nav-link"  href="/">Home</a>
                                     </li>
                                     <li className="nav-item">
-                                        <a href="/UploadFile">Upload A Picture</a>
+                                        <a className="nav-link"  href="/UploadFile">Upload A Picture</a>
                                     </li>
                                     <li className="nav-item">
-                                        <a href="/Login">Login</a>
+                                        <a className="nav-link"  href="/Login">Login</a>
                                     </li>
                                     <li className="nav-item">
-                                        <a href="/SignUp">Sign-Up</a>
+                                        <a className="nav-link"  href="/SignUp">Sign-Up</a>
                                     </li>
                                 </ul>
                             </div>
@@ -40,8 +52,10 @@ class Navbar extends Component{
             return(
                 <div>
                     <nav className="navbar navbar-expand-md navbar-light">
-                        <div className= "container-fluid">
-                            <a className= "navbar-brand" href="/"><img className="img-fluid logo" src="logo/bird.png" alt="LogoHere"/></a>
+                        <div className= "container-fluid navigation">
+                            <a className= "navbar-brand" href="/">
+                                <img className="img-fluid logo" src="logo/bird.png" alt="LogoHere"/>
+                            </a>
                             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
                                 <span className="navbar-toggler-icon"></span>
                             </button>
@@ -66,7 +80,7 @@ class Navbar extends Component{
                                         <a className="nav-link" href="/UserPage">Profile</a>
                                     </li>                              
                                     <li className="nav-item">
-                                        <a className="nav-link" href="#">Logout</a>
+                                        <a className="nav-link" href="#" onClick={this.logoutUser}>Logout</a>
                                     </li>                                
                                 </ul>
                             </div>

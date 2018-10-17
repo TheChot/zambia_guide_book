@@ -107,11 +107,11 @@ class UploadFile extends Component{
             return(
                 <div>
                     <Navbar/>
-                    <h1>Upload</h1>
-                    <div className="card">
+                    <h1>Add a Picture</h1>
+                    <div>
                         <form action="" onSubmit = {this.handleSubmit} className="text-center">
                             <div>                                
-                                <label htmlFor="">Upload an image</label>
+                                <label htmlFor="">Add an image</label>
                                 <input 
                                     type="file" 
                                     name="Image" 
@@ -142,7 +142,11 @@ class UploadFile extends Component{
                                 
                             </div>
                             
-                            <button type="submit">Enter Data</button>
+                            <button 
+                                className="btn btn-success btn-block" 
+                                type="submit">
+                                    Enter Data 
+                            </button>
                         </form>
                     </div>
                     

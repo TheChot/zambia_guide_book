@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import { withTracker } from 'meteor/react-meteor-data';
 import {SitesDB, BusinessImagesDB, ImagesDB} from '../../api/collections/collections.js';
+import Navbar from '../HomePage/Navbar.jsx';
 
 class SightPage extends Component{
     
@@ -27,7 +28,11 @@ class SightPage extends Component{
                         </div>
                         
                     </div>
+                    <br/>
+                    <br/>
+                    <br/>
                     <div>
+                        <h1>About</h1>
                         <p>{sitesdb.About}</p>
                     </div>
                     {/* {this.getImages(businessdb.Business)}*/}
@@ -41,7 +46,7 @@ class SightPage extends Component{
     render(){
         return(
             <div>
-                <h1>Sight Page</h1>
+                <Navbar/>
                 <div className="container-fluid infoPage">
                     {this.getPosts()}
                 </div>

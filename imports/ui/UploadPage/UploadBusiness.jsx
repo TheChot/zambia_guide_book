@@ -18,7 +18,8 @@ class UploadBusiness extends Component{
             Service:'',
             Province:'',
             imagePreviewURL:'',
-            imagefile:''
+            imagefile:'',
+            About:''
         }  
     }
 
@@ -42,6 +43,7 @@ class UploadBusiness extends Component{
         const LocationID = this.state.Location;
         const Services = this.state.Service;
         const Provinces = this.state.Province;
+        const about = this.state.About;
         const User = Meteor.user()._id;
         
         if(target.Image.files && target.Image.files[0]){
@@ -88,10 +90,12 @@ class UploadBusiness extends Component{
 
         const NewBusiness = {
             Business, PhoneOne, PhoneTwo, EmailID,
-            LocationID, Services, Provinces, User
+            LocationID, Services, Provinces, User,
+            about
         }
 
         Meteor.call('newBusiness', NewBusiness);
+        alert("Business Uploaded");
         
         target.Image.value = '';
         target.BusinessName.value='';
@@ -101,8 +105,9 @@ class UploadBusiness extends Component{
         target.Province.value='';
         target.Location.value='';
         target.Service.value='';
+        target.About.value="";
 
-        alert("Business Uploaded");
+        
 
     }
 
@@ -126,8 +131,8 @@ class UploadBusiness extends Component{
             return(
                 <div>
                     <Navbar/>
-                    <h1>Upload</h1>
-                    <div className="card">
+                    <h1>Add a Location</h1>
+                    <div>
                         <form action="" onSubmit = {this.handleSubmit} className="text-center">
                             <div>                                
                                 <label htmlFor="">Upload an image</label>
@@ -212,9 +217,18 @@ class UploadBusiness extends Component{
                                     className="form-control"
                                     placeholder="SERVICES"/> <br/><br/>                                
                             </div>
+                            <div className="md-form">                                
+                                <textarea
+                                    name="About" 
+                                    type="text" 
+                                    onChange={this.handleInput} 
+                                    id="formServices" 
+                                    className="form-control"
+                                    placeholder="Write a description"/> <br/><br/>                                
+                            </div>
                             <button 
                                 type="submit" 
-                                className ="btn btn-info my-4 btn-block">
+                                className ="btn btn-success btn-block">
                                     Enter Data
                             </button>
                         </form>
